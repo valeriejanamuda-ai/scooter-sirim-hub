@@ -78,6 +78,11 @@ body {
 .card.c-kpdn    { border-left-color: #00b894; }
 .card.c-sirim   { border-left-color: #0984e3; }
 .card.c-ip      { border-left-color: #00cec9; }
+.card .card-ctx {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.6px;
+  text-transform: uppercase; color: #0984e3; margin: 0 0 4px;
+}
+.card.superseded .card-ctx { color: #636e72; }
 .card .card-title { font-size: 15px; font-weight: 700; margin: 0 0 5px; }
 .card .card-desc  { font-size: 12.5px; color: #636e72; margin: 0 0 12px; flex: 1; }
 .card .card-links { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -91,6 +96,22 @@ body {
   background: #f0f7ff; color: #0984e3; border: 1px solid #dbeeff;
 }
 .card a.btn.doc:hover { background: #dbeeff; }
+
+/* === Reference sub-heading === */
+.ref-sub {
+  font-size: 14px; font-weight: 700; color: #2d3436;
+  margin: 22px 0 12px; padding-bottom: 6px;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+/* === Cross-reference pointer note === */
+.xref {
+  background: #f0f7ff; border: 1px solid #dbeeff; border-radius: 10px;
+  padding: 14px 18px; font-size: 12.5px; color: #486581;
+  margin-bottom: 8px;
+}
+.xref a { color: #0984e3; font-weight: 600; text-decoration: none; }
+.xref a:hover { text-decoration: underline; }
 
 /* === Document list === */
 .doc-group { margin-bottom: 18px; }
