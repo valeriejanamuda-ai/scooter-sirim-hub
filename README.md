@@ -6,7 +6,7 @@ the guide or PDF opens directly in the browser. No need to open local files.
 
 ## Public link
 
-> https://it-awesomeree.github.io/scooter-sirim-hub/
+> https://valeriejanamuda-ai.github.io/scooter-sirim-hub/
 
 Share this single URL with the team.
 
