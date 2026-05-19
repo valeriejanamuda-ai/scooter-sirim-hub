@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIRIM / MCMC Wireless Approval Flow</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1120px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 32px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 20px; font-size: 17px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .conditional { color: #7b3fb2; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .small { font-size: 13px; color: #555; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SIRIM / MCMC Wireless Approval Flow</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains when and how to handle SIRIM / MCMC approval for a scooter that has wireless or communication functions such as Bluetooth, WiFi, GPS tracker, GSM / 4G, NFC, RFID, Zigbee, LoRa, NB-IoT or app control.
+    </div>
+
+    <div class="note">
+      <strong>Simple summary:</strong> SIRIM / MCMC approval is only relevant if the scooter has a wireless / radio / communication module. If the scooter has no Bluetooth, WiFi, GPS communication, GSM / 4G, NFC or similar module, this section is usually not applicable.
+    </div>
+
+    <h2>1. Official Websites and Guidelines</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Reference</th>
+          <th>Website / Link</th>
+          <th>Use For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SIRIM Communication, Multimedia and Hybrid Product</td>
+          <td><a href="https://www.sirim-qas.com.my/service/communication-multimedia-and-hybrid-product/" target="_blank">https://www.sirim-qas.com.my/service/communication-multimedia-and-hybrid-product/</a></td>
+          <td>Overview of Type Approval / Compliance Approval, Special Approval and labelling for communication, multimedia and hybrid products.</td>
+        </tr>
+        <tr>
+          <td>SIRIM eComM Portal</td>
+          <td><a href="https://ecomm.sirim.my/Login_External.aspx" target="_blank">https://ecomm.sirim.my/Login_External.aspx</a></td>
+          <td>Portal for SIRIM communication/multimedia approval applications.</td>
+        </tr>
+        <tr>
+          <td>Certification Requirements for Compliance Approval / Type Approval</td>
+          <td><a href="https://www.sirim-qas.com.my/wp-content/uploads/etac_doc_01-1.1-certification-requirements-issue-2-rev-1.pdf" target="_blank">SIRIM Certification Requirements PDF</a></td>
+          <td>Certification requirements for communication, multimedia and hybrid equipment.</td>
+        </tr>
+        <tr>
+          <td>Special Approval Requirements</td>
+          <td><a href="https://www.sirim-qas.com.my/wp-content/uploads/esac_doc-01-1_special-approval-requirements_issue1-rev2-002.pdf" target="_blank">SIRIM Special Approval Requirements PDF</a></td>
+          <td>Special Approval requirements. Important: Special Approval is not the same as full Compliance Approval / Type Approval.</td>
+        </tr>
+        <tr>
+          <td>Certification Fees / Special Approval Processing Reference</td>
+          <td><a href="https://www.sirim-qas.com.my/wp-content/uploads/etac_doc_01-2-issue-2-rev-2-certification-fees_final-registered.pdf" target="_blank">SIRIM Certification Fees PDF</a></td>
+          <td>Fee and processing reference for communication and multimedia certification section.</td>
+        </tr>
+        <tr>
+          <td>MCMC Official Website</td>
+          <td><a href="https://www.mcmc.gov.my/" target="_blank">https://www.mcmc.gov.my/</a></td>
+          <td>Regulator for communications and multimedia sector in Malaysia.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. When Is SIRIM / MCMC Needed?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Scooter Feature</th>
+          <th>SIRIM / MCMC Needed?</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bluetooth app control</td><td class="conditional">Yes, likely</td><td>Bluetooth is a wireless communication module.</td></tr>
+        <tr><td>WiFi connection</td><td class="conditional">Yes, likely</td><td>WiFi uses radio frequency and communication equipment rules.</td></tr>
+        <tr><td>GPS only, no communication</td><td class="optional">Check</td><td>GPS receiver-only may be treated differently, but still confirm with SIRIM.</td></tr>
+        <tr><td>GPS tracker with SIM / 4G / GSM</td><td class="conditional">Yes, likely</td><td>Cellular communication module requires approval.</td></tr>
+        <tr><td>NFC / RFID</td><td class="conditional">Yes, likely</td><td>Short-range radio communication technology.</td></tr>
+        <tr><td>Zigbee / LoRa / NB-IoT</td><td class="conditional">Yes, likely</td><td>Radio or IoT communication module.</td></tr>
+        <tr><td>No wireless module at all</td><td class="optional">Usually no</td><td>If there is no communication / radio module, SIRIM / MCMC is usually not applicable.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Important:</strong> Before applying, first confirm whether the scooter actually contains any wireless module. If supplier says “mobile app supported,” “Bluetooth lock,” “GPS tracking,” “remote control,” or “4G anti-theft,” treat it as possible SIRIM / MCMC scope.
+    </div>
+
+    <h2>3. Which Route: Type Approval, Hybrid Certification or Special Approval?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Route</th>
+          <th>Use Case</th>
+          <th>Suitable for Normal Selling?</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Compliance Approval / Type Approval</strong></td>
+          <td>For commercial sale/import of communication, multimedia or hybrid equipment.</td>
+          <td class="mandatory">Yes, normally this is the proper route for selling.</td>
+          <td>Use this if the scooter will be sold commercially and has wireless/communication functions.</td>
+        </tr>
+        <tr>
+          <td><strong>Hybrid Certification Scheme</strong></td>
+          <td>For hybrid products where communication module is built into another product, for example vehicle, appliance, toy, medical device, smart meter, etc.</td>
+          <td class="conditional">Likely, if scooter is treated as hybrid product.</td>
+          <td>For scooter, this may apply if the wireless module is embedded inside the vehicle/product.</td>
+        </tr>
+        <tr>
+          <td><strong>Special Approval</strong></td>
+          <td>For special / limited purposes such as sample, trial, demo, personal, temporary import, exhibition or non-commercial use, subject to SIRIM approval category.</td>
+          <td class="warning">Usually not enough for normal selling.</td>
+          <td>SIRIM Special Approval document states Special Approval cannot be treated as Compliance Approval / Type Approval and equipment can only be used as specified in the Special Approval.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <strong>Practical interpretation for scooter:</strong> If the scooter has Bluetooth / app control / 4G GPS tracker and you want to sell it normally, submit enquiry to SIRIM eComM and ask whether it should be under Type Approval / Compliance Approval or Hybrid Certification Scheme. Do not rely on Special Approval for normal commercial sale unless SIRIM confirms it is acceptable.
+    </div>
+
+    <h2>4. Overall Flow</h2>
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>Platform / Authority</th><th>Purpose</th><th>Mandatory?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. Confirm wireless function</td><td>Supplier / Importer</td><td>Determine whether SIRIM / MCMC route applies.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>2. Collect module documents</td><td>Supplier / Module Manufacturer</td><td>Prepare RF and product technical file.</td><td class="mandatory">Yes, if wireless exists</td></tr>
+        <tr><td>3. Submit enquiry to SIRIM eComM</td><td>SIRIM eComM</td><td>Confirm correct route: Type Approval, Hybrid Certification or Special Approval.</td><td class="recommended">Strongly recommended</td></tr>
+        <tr><td>4. Apply approval</td><td>SIRIM QAS / MCMC route</td><td>Submit application and documents.</td><td class="mandatory">Yes, if wireless approval required</td></tr>
+        <tr><td>5. Evaluation / testing</td><td>SIRIM / Accepted Lab</td><td>Review RF reports and test if required.</td><td class="conditional">If required</td></tr>
+        <tr><td>6. Approval certificate</td><td>SIRIM QAS</td><td>Obtain approval before selling/importing wireless product.</td><td class="mandatory">Yes, if applicable</td></tr>
+        <tr><td>7. MCMC label / SLP</td><td>SIRIM / MCMC Labelling</td><td>Apply/affix required label if applicable.</td><td class="mandatory">Yes, if required</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. Flow Details</h2>
+
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Confirm Wireless Function</h3>
+      <p><strong>Purpose:</strong> Determine whether the scooter has any wireless/communication module.</p>
+      <p><strong>Ask supplier to confirm:</strong></p>
+      <ul>
+        <li>Does the scooter have Bluetooth?</li>
+        <li>Does it support mobile app connection?</li>
+        <li>Does it have WiFi?</li>
+        <li>Does it have GPS tracking?</li>
+        <li>If GPS exists, is it receiver-only or does it have SIM/4G/GSM communication?</li>
+        <li>Does it have NFC, RFID, Zigbee, LoRa, NB-IoT or other wireless module?</li>
+        <li>Does it have remote lock/unlock, anti-theft tracking, or cloud connection?</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory first step</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Collect Wireless Module Documents</h3>
+      <p><strong>Purpose:</strong> Prepare the technical file before enquiry/application.</p>
+      <p><strong>Documents needed from supplier:</strong></p>
+      <ul>
+        <li>Wireless module brand and model</li>
+        <li>Wireless module datasheet</li>
+        <li>Frequency band</li>
+        <li>RF output power</li>
+        <li>Antenna specification</li>
+        <li>Antenna gain</li>
+        <li>RF test report</li>
+        <li>CE / FCC report, if available</li>
+        <li>Product photos</li>
+        <li>Internal photos showing module location, if available</li>
+        <li>User manual</li>
+        <li>Product label artwork</li>
+        <li>App description</li>
+        <li>Bluetooth / WiFi / GPS / 4G function description</li>
+        <li>Importer details</li>
+        <li>Supplier / manufacturer details</li>
+        <li>Brand authorization letter, if applicable</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if wireless exists</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Submit Enquiry to SIRIM eComM</h3>
+      <p><strong>Purpose:</strong> Confirm the correct approval route before submitting the actual application.</p>
+      <p><strong>Platform:</strong> <a href="https://ecomm.sirim.my/Login_External.aspx" target="_blank">SIRIM eComM Portal</a></p>
+      <p><strong>Attach / include in enquiry:</strong></p>
+      <ul>
+        <li>Product name: Electric scooter / micromobility vehicle</li>
+        <li>Wireless function summary</li>
+        <li>Wireless module brand/model</li>
+        <li>Datasheet</li>
+        <li>Frequency band and RF output power</li>
+        <li>Product photos</li>
+        <li>User manual</li>
+        <li>Whether product is for commercial sale or sample/trial</li>
+      </ul>
+      <p><strong>Question to ask SIRIM:</strong></p>
+      <div class="code-block">Please advise whether this product should be applied under Compliance Approval / Type Approval, Hybrid Certification Scheme, or Special Approval. The product is an electric scooter with [Bluetooth/WiFi/GPS/GSM/etc.] and will be imported for [commercial sale/sample/testing].</div>
+      <p><strong>Status:</strong> <span class="recommended">Strongly recommended before application</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">4</span>Apply Type Approval / Hybrid Certification / Special Approval</h3>
+      <p><strong>Purpose:</strong> Submit the official application based on SIRIM’s advice.</p>
+      <p><strong>Documents normally needed:</strong></p>
+      <ul>
+        <li>Company / importer details</li>
+        <li>SSM company registration</li>
+        <li>Authorised person details</li>
+        <li>Product catalogue / brochure</li>
+        <li>User manual</li>
+        <li>Product photos</li>
+        <li>Product label artwork</li>
+        <li>Wireless module datasheet</li>
+        <li>RF test report / CE / FCC report, if available</li>
+        <li>Antenna details</li>
+        <li>Frequency band and output power</li>
+        <li>Brand authorization letter, if applicable</li>
+        <li>Invoice / shipment details, if applying for Special Approval or clearance-related route</li>
+        <li>Application fee/payment</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if wireless approval applies</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">5</span>Evaluation / Testing</h3>
+      <p><strong>Purpose:</strong> SIRIM reviews the application and may accept existing reports or request local testing/additional documents.</p>
+      <p><strong>Possible requests from SIRIM:</strong></p>
+      <ul>
+        <li>Additional RF test report</li>
+        <li>Sample unit for testing</li>
+        <li>Clarification on frequency band</li>
+        <li>Clarification on antenna gain or module location</li>
+        <li>Corrected product label/manual</li>
+        <li>Manufacturer authorization or declaration</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="conditional">Depends on SIRIM review</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">6</span>Approval Certificate</h3>
+      <p><strong>Purpose:</strong> Obtain approval before commercial sale/import of wireless communication equipment.</p>
+      <p><strong>Outcome:</strong></p>
+      <ul>
+        <li>Compliance Approval / Type Approval certificate, if approved under normal commercial route</li>
+        <li>Hybrid certification approval, if classified under hybrid product route</li>
+        <li>Special Approval certificate, if approved for specified limited purpose</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if product has regulated wireless function</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">7</span>MCMC Label / Self-Labelling Program</h3>
+      <p><strong>Purpose:</strong> Ensure the approved communication equipment carries the required MCMC label / marking where applicable.</p>
+      <p><strong>Documents / actions may include:</strong></p>
+      <ul>
+        <li>Approval certificate reference</li>
+        <li>Product label artwork</li>
+        <li>SLP / label registration details, if applicable</li>
+        <li>Label placement on product / packaging / manual, depending on approval condition</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if required by approval condition</span></p>
+    </div>
+
+    <h2>6. Mandatory vs Optional</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Status</th><th>Prepared By</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td>Confirm whether scooter has wireless module</td><td class="mandatory">Mandatory</td><td>Supplier / Importer</td><td>Needed to know whether SIRIM/MCMC applies.</td></tr>
+        <tr><td>Wireless module brand/model</td><td class="mandatory">Mandatory if wireless exists</td><td>Supplier</td><td>Needed for route checking and application.</td></tr>
+        <tr><td>Module datasheet</td><td class="mandatory">Mandatory if wireless exists</td><td>Supplier / Module maker</td><td>Shows technical details and frequency band.</td></tr>
+        <tr><td>Frequency band / RF output power</td><td class="mandatory">Mandatory if wireless exists</td><td>Supplier</td><td>Core RF compliance details.</td></tr>
+        <tr><td>Antenna specification / gain</td><td class="mandatory">Mandatory if wireless exists</td><td>Supplier</td><td>Needed for RF assessment.</td></tr>
+        <tr><td>RF test report</td><td class="mandatory">Mandatory / likely</td><td>Supplier / Lab</td><td>SIRIM may accept or require additional/local testing.</td></tr>
+        <tr><td>CE / FCC reports</td><td class="recommended">Recommended</td><td>Supplier</td><td>Supporting evidence, but not automatically equal to Malaysia approval.</td></tr>
+        <tr><td>Internal photos showing module location</td><td class="recommended">Recommended</td><td>Supplier</td><td>Useful for hybrid product assessment.</td></tr>
+        <tr><td>Product label artwork</td><td class="mandatory">Mandatory if applying</td><td>Supplier / Importer</td><td>Needed for approval and labelling check.</td></tr>
+        <tr><td>Brand authorization letter</td><td class="conditional">If applicable</td><td>Brand owner / supplier</td><td>Needed if applying under another brand or as authorized distributor.</td></tr>
+        <tr><td>Special Approval</td><td class="conditional">Only for specified use</td><td>Importer / SIRIM</td><td>Usually not sufficient for normal commercial selling.</td></tr>
+        <tr><td>Compliance Approval / Type Approval</td><td class="mandatory">Mandatory for normal sale if wireless applies</td><td>Importer / SIRIM</td><td>Proper route for commercial sale of communication equipment.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. Supplier Request Checklist</h2>
+    <p>Send this list to supplier if the scooter has Bluetooth, WiFi, GPS tracker, GSM/4G, NFC, RFID, Zigbee, LoRa, NB-IoT or app control:</p>
+    <ul>
+      <li>Confirmation whether scooter has Bluetooth, WiFi, GPS, GSM/4G, NFC, RFID, Zigbee, LoRa, NB-IoT or any other wireless module</li>
+      <li>Wireless module brand and model</li>
+      <li>Wireless module datasheet</li>
+      <li>Frequency band</li>
+      <li>RF output power</li>
+      <li>Antenna specification</li>
+      <li>Antenna gain</li>
+      <li>RF test report</li>
+      <li>CE / FCC report, if available</li>
+      <li>Product photos</li>
+      <li>Internal photos showing module location, if available</li>
+      <li>User manual</li>
+      <li>Product label artwork</li>
+      <li>App description</li>
+      <li>Bluetooth / WiFi / GPS / 4G function description</li>
+      <li>Manufacturer name and address</li>
+      <li>Brand authorization letter, if applicable</li>
+    </ul>
+
+    <h2>8. Message to Supplier</h2>
+    <div class="code-block">Hi, for Malaysia SIRIM/MCMC checking, please confirm whether this scooter has any wireless module such as Bluetooth, WiFi, GPS, GSM/4G, NFC, RFID, Zigbee, LoRa, NB-IoT or app control.
+
+If yes, please provide the wireless module brand/model, module datasheet, frequency band, RF output power, antenna specification/gain, RF test report, CE/FCC report if available, product photos, internal photos showing module location, user manual, product label artwork, and description of the Bluetooth/WiFi/GPS/app function.</div>
+
+    <h2>9. Message to SIRIM eComM</h2>
+    <div class="code-block">Dear SIRIM Team,
+
+We would like to seek your advice on the correct approval route for an electric scooter / micromobility product with wireless function.
+
+Product: Electric scooter / micromobility vehicle
+Wireless function: [Bluetooth / WiFi / GPS tracker / GSM/4G / others]
+Wireless module brand/model: [insert]
+Frequency band: [insert]
+Purpose: Commercial import and sale in Malaysia
+
+Kindly advise whether this product should be applied under Compliance Approval / Type Approval, Hybrid Certification Scheme, or Special Approval. Please also advise the required documents, testing requirements, labelling requirements and estimated processing time.
+
+Thank you.</div>
+
+    <h2>10. Quick Copy Summary</h2>
+    <div class="code-block">SIRIM/MCMC Wireless Approval Flow:
+1. Confirm whether scooter has Bluetooth, WiFi, GPS tracker, GSM/4G, NFC, RFID, Zigbee, LoRa, NB-IoT or app control.
+2. If no wireless module, SIRIM/MCMC is usually not applicable.
+3. If wireless module exists, request supplier documents: module datasheet, frequency band, RF output power, antenna details, RF report, CE/FCC report, product photos, internal photos, manual and label artwork.
+4. Submit enquiry to SIRIM eComM to confirm correct route.
+5. For commercial sale, likely route is Compliance Approval / Type Approval or Hybrid Certification Scheme.
+6. Special Approval is normally for limited/specified use and should not be treated as full Type Approval for normal sale unless SIRIM confirms.
+7. Submit application, respond to SIRIM queries/testing requests, obtain approval certificate, and complete MCMC labelling/SLP if required.</div>
+
+    <h2>11. Key Reminder</h2>
+    <div class="note">
+      CE/FCC/RF reports are useful supporting documents, but they do not automatically replace Malaysia SIRIM / MCMC approval. For normal commercial selling, confirm with SIRIM whether Type Approval / Compliance Approval or Hybrid Certification Scheme is required.
+    </div>
+
+    <p class="small">Prepared as an internal working guide for SIRIM / MCMC wireless approval planning. Final requirements should be confirmed with SIRIM QAS, MCMC, your supplier and your forwarding/customs agent before import or sale.</p>
+  </div>
+</body>
+</html>

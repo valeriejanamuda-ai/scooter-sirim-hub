@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charger / Adaptor Approval Flow in Malaysia</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1120px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 32px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 20px; font-size: 17px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .small { font-size: 13px; color: #555; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Charger / Adaptor Approval Flow in Malaysia</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains the approval flow for scooter charger/adaptor in Malaysia, especially for Category 33: Adapter / Charger, Subcategory: A.C. - D.C. Chargers.
+    </div>
+
+    <div class="note">
+      <strong>Simple summary:</strong> For charger/adaptor, the usual flow is <strong>ST CoA application → import shipment → SIRIM consignment test → ST-SIRIM label → sell/distribute</strong>.
+    </div>
+
+    <h2>1. Official Websites and Guidelines</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Reference</th>
+          <th>Website / Link</th>
+          <th>Use For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Suruhanjaya Tenaga e-DIK</td>
+          <td><a href="https://edik.st.gov.my/" target="_blank">https://edik.st.gov.my/</a></td>
+          <td>ST registration / related ST application access, where applicable.</td>
+        </tr>
+        <tr>
+          <td>DagangNet / ePermit</td>
+          <td><a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></td>
+          <td>Online Certificate of Approval (CoA) application route for regulated electrical equipment.</td>
+        </tr>
+        <tr>
+          <td>SIRIM e-CEE</td>
+          <td><a href="https://e-cee.sirim.my/" target="_blank">https://e-cee.sirim.my/</a></td>
+          <td>SIRIM consignment test application after ST CoA approval and shipment arrival/customs clearance.</td>
+        </tr>
+        <tr>
+          <td>ST CoA FAQ</td>
+          <td><a href="https://www.st.gov.my/how-do-i-apply-certificate-approval-coa" target="_blank">https://www.st.gov.my/how-do-i-apply-certificate-approval-coa</a></td>
+          <td>Explains CoA application and SIRIM consignment test after shipment arrives and clears Customs.</td>
+        </tr>
+        <tr>
+          <td>ST Guidelines for Approval of Electrical Equipment</td>
+          <td><a href="https://www.st.gov.my/sites/default/files/2026-02/Guidelines-for-the-Approval-of-Electrical-Equipment-%282024-Edition%29.pdf" target="_blank">Guidelines for the Approval of Electrical Equipment (2024 Edition)</a></td>
+          <td>Official guideline booklet. Refer to Category 33: Adapter / Charger, Subcategory A.C. - D.C. Chargers.</td>
+        </tr>
+        <tr>
+          <td>SIRIM Consignment Batch Service</td>
+          <td><a href="https://www.sirim-qas.com.my/service/electrical-electronics/scope-of-testing/consignment-batch-for-imported-electrical-and-electronics-products/" target="_blank">SIRIM Consignment Batch for Imported E&E Products</a></td>
+          <td>Consignment testing and label issuance for imported electrical/electronic products.</td>
+        </tr>
+        <tr>
+          <td>e-CEE Client User Manual</td>
+          <td><a href="https://www.sirim-qas.com.my/wp-content/uploads/tcqs-doc-01-4-ce-e-cee-client-user-manual.pdf" target="_blank">e-CEE Client User Manual</a></td>
+          <td>How to use e-CEE for consignment test application.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. Overall Flow</h2>
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>Platform / Authority</th><th>Purpose</th><th>Mandatory?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. Company registration / access</td><td>e-DIK / ST / DagangNet</td><td>Prepare company access before submitting charger approval.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>2. Prepare charger technical documents</td><td>Supplier / Factory / Testing Lab</td><td>Collect safety test report and product documents.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>3. Apply ST CoA</td><td>ePermit DagangNet / Suruhanjaya Tenaga</td><td>Get Certificate of Approval for charger/adaptor.</td><td class="mandatory">Yes, if charger is regulated</td></tr>
+        <tr><td>4. Import shipment</td><td>Customs / Forwarder</td><td>Import the approved charger/adaptor.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>5. SIRIM consignment test</td><td>e-CEE SIRIM</td><td>Verify actual imported goods before label issuance.</td><td class="mandatory">Yes, after CoA approval</td></tr>
+        <tr><td>6. ST-SIRIM label</td><td>SIRIM</td><td>Purchase and affix label before selling.</td><td class="mandatory">Yes, before sale/distribution</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Important:</strong> Adapter / Charger is listed as Category 33 under regulated electrical equipment. For scooter packages, the charger/adaptor is usually treated separately from the 36V battery because the charger connects to Malaysia mains electricity.
+    </div>
+
+    <h2>3. Flow Details</h2>
+
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Company Registration / Access</h3>
+      <p><strong>Purpose:</strong> Make sure the company has the required account/access to submit charger approval.</p>
+      <p><strong>Platforms:</strong></p>
+      <ul>
+        <li>e-DIK / ST: <a href="https://edik.st.gov.my/" target="_blank">https://edik.st.gov.my/</a></li>
+        <li>ePermit DagangNet: <a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></li>
+      </ul>
+      <p><strong>Documents needed:</strong></p>
+      <ul>
+        <li>SSM company registration</li>
+        <li>Company profile</li>
+        <li>Authorised PIC details</li>
+        <li>Company letterhead</li>
+        <li>DagangNet / ePermit account</li>
+        <li>COR / ST registration, if required</li>
+      </ul>
+      <p><strong>Who prepares:</strong> Importer / your company.</p>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Prepare Charger Technical Documents</h3>
+      <p><strong>Purpose:</strong> Collect all charger documents before applying ST CoA.</p>
+      <p><strong>Documents needed from supplier:</strong></p>
+      <ul>
+        <li>Charger model number</li>
+        <li>Charger technical specification sheet</li>
+        <li>Input voltage / frequency, for example 100-240V~, 50/60Hz</li>
+        <li>Output voltage / current, for example 42V DC, 1.5A or 2A</li>
+        <li>Wattage rating</li>
+        <li>Type Test Report / IEC safety test report</li>
+        <li>CB certificate and CB report, if available</li>
+        <li>List of components / BOM</li>
+        <li>Instruction manual</li>
+        <li>Product catalogue / datasheet</li>
+        <li>Rating label artwork</li>
+        <li>Clear charger photos: front, back, plug, cable, label, packaging</li>
+        <li>Plug type details</li>
+        <li>Manufacturer name and address</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory for core documents</span>. CB report and EMC report are <span class="recommended">strongly recommended</span> if available.</p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Apply ST CoA</h3>
+      <p><strong>Purpose:</strong> Apply Certificate of Approval for the charger/adaptor.</p>
+      <p><strong>Platform:</strong> ePermit DagangNet / Suruhanjaya Tenaga.</p>
+      <p><strong>Guideline:</strong> ST Guidelines for the Approval of Electrical Equipment, Category 33: Adapter / Charger, Subcategory A.C. - D.C. Chargers.</p>
+      <p><strong>Documents normally required:</strong></p>
+      <ul>
+        <li>Online CoA application form</li>
+        <li>Type Test Report</li>
+        <li>List of components</li>
+        <li>Instruction manual</li>
+        <li>Technical specification</li>
+        <li>Product catalogue</li>
+        <li>Product sample, if requested</li>
+        <li>Company registration / applicant details</li>
+        <li>Payment / application fee</li>
+      </ul>
+      <p><strong>Important:</strong> Make sure the charger model number is consistent across the test report, label artwork, catalogue, invoice, packing list and actual charger.</p>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if charger is regulated</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">4</span>ST Review and Approval</h3>
+      <p><strong>Purpose:</strong> ST reviews the charger application and documents.</p>
+      <p><strong>Possible outcome:</strong></p>
+      <ul>
+        <li>Approved: ST issues CoA</li>
+        <li>Queried: Additional documents/corrections required</li>
+        <li>Rejected: Need to correct issue and reapply</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">ST CoA must be approved before moving to ST-SIRIM label stage</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">5</span>Import Shipment</h3>
+      <p><strong>Purpose:</strong> Import the approved charger/adaptor shipment into Malaysia.</p>
+      <p><strong>Documents needed:</strong></p>
+      <ul>
+        <li>Approved ST CoA</li>
+        <li>Commercial invoice</li>
+        <li>Packing list</li>
+        <li>Bill of Lading / Airway Bill</li>
+        <li>Customs declaration documents</li>
+        <li>Charger model and rating details</li>
+      </ul>
+      <p><strong>Who prepares:</strong> Supplier provides invoice and packing list. Forwarder provides shipping/customs documents. Importer keeps CoA records.</p>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">6</span>SIRIM Consignment Test</h3>
+      <p><strong>Purpose:</strong> SIRIM checks the actual imported charger batch before ST-SIRIM labels are issued.</p>
+      <p><strong>Platform:</strong> e-CEE SIRIM: <a href="https://e-cee.sirim.my/" target="_blank">https://e-cee.sirim.my/</a></p>
+      <p><strong>Documents normally needed:</strong></p>
+      <ul>
+        <li>ST CoA copy</li>
+        <li>Invoice</li>
+        <li>Packing list</li>
+        <li>Bill of Lading / Airway Bill</li>
+        <li>Customs clearance / K1, if applicable</li>
+        <li>Product photos</li>
+        <li>Quantity to label</li>
+        <li>Warehouse / inspection location</li>
+        <li>Contact person details</li>
+        <li>Sample availability for inspection/testing</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory after ST CoA approval and before ST-SIRIM label issuance</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">7</span>ST-SIRIM Label</h3>
+      <p><strong>Purpose:</strong> Purchase and affix the ST-SIRIM label before selling/distributing the charger or scooter set with charger.</p>
+      <p><strong>Documents / actions needed:</strong></p>
+      <ul>
+        <li>Passed SIRIM consignment test result</li>
+        <li>Payment for labels</li>
+        <li>Label quantity based on approved consignment quantity</li>
+        <li>Affix ST-SIRIM label before sale/distribution</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory before selling regulated charger/adaptor</span></p>
+    </div>
+
+    <h2>4. Mandatory vs Recommended Documents</h2>
+    <table>
+      <thead><tr><th>Document / Action</th><th>Status</th><th>Prepared By</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td>SSM company registration</td><td class="mandatory">Mandatory</td><td>Importer</td><td>Required for company/application setup.</td></tr>
+        <tr><td>DagangNet / ePermit account</td><td class="mandatory">Mandatory</td><td>Importer</td><td>Needed for CoA application.</td></tr>
+        <tr><td>Type Test Report / IEC safety test report</td><td class="mandatory">Mandatory</td><td>Supplier / Testing Lab</td><td>Main safety evidence for charger.</td></tr>
+        <tr><td>List of components / BOM</td><td class="mandatory">Mandatory</td><td>Supplier / Factory</td><td>Needed for CoA review.</td></tr>
+        <tr><td>Instruction manual</td><td class="mandatory">Mandatory</td><td>Supplier</td><td>Charging and safety instructions.</td></tr>
+        <tr><td>Technical specification</td><td class="mandatory">Mandatory</td><td>Supplier</td><td>Input/output, wattage, plug type, protection features.</td></tr>
+        <tr><td>Product catalogue / datasheet</td><td class="mandatory">Mandatory</td><td>Supplier</td><td>Product identity and details.</td></tr>
+        <tr><td>Product sample</td><td class="optional">If requested</td><td>Supplier / Importer</td><td>Prepare sample if ST or SIRIM requests.</td></tr>
+        <tr><td>CB certificate and CB report</td><td class="recommended">Recommended</td><td>Supplier</td><td>Helpful for ST review if available.</td></tr>
+        <tr><td>EMC report</td><td class="recommended">Recommended</td><td>Supplier</td><td>Useful if requested.</td></tr>
+        <tr><td>Invoice, packing list, BL/AWB</td><td class="mandatory">Mandatory for shipment/consignment</td><td>Supplier / Forwarder</td><td>Needed after CoA during import and SIRIM consignment test.</td></tr>
+        <tr><td>SIRIM consignment test</td><td class="mandatory">Mandatory after CoA</td><td>Importer / SIRIM</td><td>Needed to obtain ST-SIRIM label.</td></tr>
+        <tr><td>ST-SIRIM label</td><td class="mandatory">Mandatory before sale</td><td>Importer / SIRIM</td><td>Must be affixed before sale/distribution.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. Supplier Request Checklist</h2>
+    <p>Send this list to supplier for the charger/adaptor:</p>
+    <ul>
+      <li>Charger model number</li>
+      <li>Charger technical specification sheet</li>
+      <li>Input voltage / frequency</li>
+      <li>Output voltage / current</li>
+      <li>Wattage rating</li>
+      <li>Type Test Report / IEC safety test report</li>
+      <li>CB certificate and CB report, if available</li>
+      <li>EMC test report, if available</li>
+      <li>List of components / BOM</li>
+      <li>Instruction manual</li>
+      <li>Product catalogue / datasheet</li>
+      <li>Rating label artwork</li>
+      <li>Clear photos of charger, plug, cable, label and packaging</li>
+      <li>Plug type details</li>
+      <li>Manufacturer name and address</li>
+    </ul>
+
+    <h2>6. Quick Copy Summary</h2>
+    <div class="code-block">Charger / Adaptor Approval Flow:
+1. Confirm charger is under Category 33: Adapter / Charger, A.C. - D.C. Chargers.
+2. Register / prepare company access: e-DIK, DagangNet / ePermit.
+3. Request supplier documents: charger specification, Type Test Report, component list, manual, catalogue, rating label and photos.
+4. Apply ST CoA through ePermit DagangNet.
+5. If ST queries, submit additional documents/corrections.
+6. Once ST CoA is approved, proceed with import shipment.
+7. After shipment arrives and clears Customs, apply SIRIM consignment test through e-CEE.
+8. After consignment test passes, purchase/receive ST-SIRIM labels.
+9. Affix ST-SIRIM label before sale/distribution.</div>
+
+    <h2>7. Key Reminder</h2>
+    <div class="note">
+      CE/FCC alone is usually not enough for Malaysia sale. For regulated charger/adaptor, the usual local requirement is <strong>ST CoA + SIRIM consignment test + ST-SIRIM label</strong> before sale/distribution.
+    </div>
+
+    <p class="small">Prepared as an internal working guide for charger

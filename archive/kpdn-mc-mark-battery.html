@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KPDN MC Mark for Secondary Battery</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1120px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 32px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 20px; font-size: 17px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .conditional { color: #7b3fb2; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+    .small { font-size: 13px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>KPDN MC Mark for Secondary Battery</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains the compliance flow for secondary rechargeable lithium batteries under KPDN mySAFE / Conformity Mark (MC) checking.
+    </div>
+
+    <div class="note">
+      <strong>Simple summary:</strong> This route is for <strong>secondary batteries</strong>, meaning rechargeable batteries. For scooter battery, this is mainly about battery safety certification / MC Mark checking, using <strong>MS IEC 62133:2017 / IEC 62133</strong> as the key safety standard.
+    </div>
+
+    <h2>1. Official Websites and Guidelines</h2>
+    <table>
+      <thead><tr><th>Reference</th><th>Website / Link</th><th>Use For</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>KPDN mySAFE Procedure & Guidelines</td>
+          <td><a href="https://mysafe.kpdn.gov.my/portal/post/5" target="_blank">https://mysafe.kpdn.gov.my/portal/post/5</a></td>
+          <td>Guidelines page listing Secondary Battery Safety Standard Compliance and Conformity Mark (MC) guidelines.</td>
+        </tr>
+        <tr>
+          <td>Guidelines on Secondary Battery Safety Standard Compliance 2018</td>
+          <td><a href="https://mysafe.kpdn.gov.my/img/portal/consumer-safety/Garis%20Panduan%20Pematuhan%20Standard%20Keselamatan%20Bateri%20Sekunder%202018.pdf" target="_blank">KPDN Secondary Battery Guideline PDF</a></td>
+          <td>Secondary battery safety guideline referring to MS IEC 62133:2017 / IEC 62133.</td>
+        </tr>
+        <tr>
+          <td>Guidelines on Conformity Mark (MC)</td>
+          <td><a href="https://mysafe.kpdn.gov.my/portal/post/5" target="_blank">KPDN mySAFE MC Guideline Page</a></td>
+          <td>Reference page for Conformity Mark (MC) guideline documents.</td>
+        </tr>
+        <tr>
+          <td>SIRIM Product Certification - Secondary Battery</td>
+          <td><a href="https://prism.sirim.my/s/product/ms-iec-62133-2017/01t5g000005SHrtAAG" target="_blank">SIRIM PRISM MS IEC 62133:2017</a></td>
+          <td>SIRIM product certification scheme for secondary battery under MS IEC 62133 / IEC 62133.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. When Is This Applicable?</h2>
+    <table>
+      <thead><tr><th>Situation</th><th>Applicability</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td>Rechargeable lithium battery sold separately</td><td class="conditional">Likely applicable / must check</td><td>Battery is a direct consumer product and may fall under secondary battery safety compliance.</td></tr>
+        <tr><td>Battery included inside complete scooter</td><td class="conditional">Check with KPDN / SIRIM QAS</td><td>May be treated as part of scooter package, but battery safety documents should still be prepared.</td></tr>
+        <tr><td>Only charger/adaptor</td><td class="optional">Not this route</td><td>Charger route is ST CoA + ST-SIRIM Label.</td></tr>
+        <tr><td>Primary / non-rechargeable battery</td><td class="optional">Not this guide</td><td>This guide is for secondary rechargeable batteries.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Important:</strong> Treat this as a compliance check before sale. Enforcement and applicability can depend on the battery category and how it is sold. Ask KPDN / SIRIM QAS to confirm whether MC Mark is required for your exact scooter battery model.
+    </div>
+
+    <h2>3. Overall Flow</h2>
+    <table>
+      <thead><tr><th>Stage</th><th>Platform / Authority</th><th>Purpose</th><th>Mandatory?</th></tr></thead>
+      <tbody>
+        <tr><td>1. Confirm battery scope</td><td>Importer + Supplier + KPDN/SIRIM QAS</td><td>Check whether MC Mark applies to the scooter battery.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>2. Collect battery technical documents</td><td>Supplier / Battery Manufacturer</td><td>Prepare battery safety and identification documents.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>3. Prepare MS IEC 62133 / IEC 62133 report</td><td>Supplier / Accredited Lab / SIRIM</td><td>Battery safety test evidence.</td><td class="mandatory">Likely if applying MC Mark</td></tr>
+        <tr><td>4. Apply certification / MC Mark route</td><td>SIRIM QAS / KPDN route</td><td>Submit documents and application.</td><td class="conditional">If MC Mark applies</td></tr>
+        <tr><td>5. Testing / review / audit if required</td><td>SIRIM QAS / Lab</td><td>Product testing and certification review.</td><td class="conditional">If required</td></tr>
+        <tr><td>6. MC Mark / certification outcome</td><td>SIRIM QAS / KPDN</td><td>Obtain certification/marking approval if required.</td><td class="conditional">If applicable</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Flow Details</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Confirm Battery Scope</h3>
+      <p><strong>Purpose:</strong> Confirm whether the scooter battery needs KPDN MC Mark / secondary battery safety certification.</p>
+      <p><strong>Ask / confirm:</strong></p>
+      <ul>
+        <li>Is the battery sold separately as a replacement battery?</li>
+        <li>Is the battery only included inside the scooter?</li>
+        <li>Is the battery removable?</li>
+        <li>Is it lithium-ion or LiFePO4?</li>
+        <li>Does the battery label identify it as a standalone product?</li>
+        <li>Does KPDN / SIRIM QAS require MC Mark for this battery category?</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory first step</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Collect Battery Technical Documents</h3>
+      <p><strong>Documents needed from supplier / manufacturer:</strong></p>
+      <ul>
+        <li>Battery model number</li>
+        <li>Battery specification sheet</li>
+        <li>Battery voltage, for example 36V</li>
+        <li>Battery capacity, for example 6Ah / 7.8Ah</li>
+        <li>Battery energy rating, for example 216Wh / 280.8Wh</li>
+        <li>Lithium cell datasheet</li>
+        <li>Cell brand and model</li>
+        <li>Cell chemistry, for example lithium-ion or LiFePO4</li>
+        <li>BMS specification</li>
+        <li>Battery pack wiring diagram</li>
+        <li>Battery protection details: overcharge, over-discharge, short circuit, overcurrent, temperature protection</li>
+        <li>Battery label artwork</li>
+        <li>Battery photos: front, back, connector, label</li>
+        <li>Internal battery photos, if available</li>
+        <li>Manufacturer name and address</li>
+        <li>Factory ISO 9001 certificate, if available</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory for application preparation</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Prepare MS IEC 62133 / IEC 62133 Test Report</h3>
+      <p><strong>Purpose:</strong> Show battery safety compliance for rechargeable lithium battery.</p>
+      <p><strong>Acceptable evidence may include:</strong></p>
+      <ul>
+        <li>Existing MS IEC 62133:2017 report</li>
+        <li>Existing IEC 62133-2 report</li>
+        <li>CB report/certificate for IEC 62133-2, if available</li>
+        <li>New test report from SIRIM or accredited/accepted lab, if supplier report is not accepted</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Likely mandatory if MC Mark / secondary battery certification applies</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">4</span>Apply Certification / MC Mark Route</h3>
+      <p><strong>Purpose:</strong> Submit the battery safety certification / MC Mark application if required.</p>
+      <p><strong>Documents normally prepared:</strong></p>
+      <ul>
+        <li>Company / importer details</li>
+        <li>SSM company registration</li>
+        <li>Battery technical documents</li>
+        <li>MS IEC 62133 / IEC 62133 test report</li>
+        <li>Product catalogue / battery datasheet</li>
+        <li>Battery label artwork</li>
+        <li>Manufacturer details</li>
+        <li>Factory quality documents, if requested</li>
+        <li>Samples for testing, if required</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="conditional">Required if KPDN / SIRIM QAS confirms MC Mark applies</span></p>
+    </div>
+
+    <h2>5. Mandatory vs Optional</h2>
+    <table>
+      <thead><tr><th>Document / Action</th><th>Status</th><th>Prepared By</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td>Confirm KPDN MC Mark applicability</td><td class="mandatory">Mandatory</td><td>Importer</td><td>Do this before deciding whether to apply.</td></tr>
+        <tr><td>Battery model number and specification</td><td class="mandatory">Mandatory</td><td>Supplier</td><td>Must match label, invoice and report.</td></tr>
+        <tr><td>MS IEC 62133 / IEC 62133 report</td><td class="mandatory">Likely mandatory if applying</td><td>Supplier / Lab</td><td>Core battery safety report.</td></tr>
+        <tr><td>Battery label artwork</td><td class="mandatory">Mandatory if applying</td><td>Supplier / Importer</td><td>Used for marking and product identity check.</td></tr>
+        <tr><td>Cell datasheet / BMS details</td><td class="recommended">Recommended</td><td>Supplier</td><td>Useful for technical review.</td></tr>
+        <tr><td>Factory ISO 9001</td><td class="optional">Optional / if available</td><td>Supplier</td><td>Supporting document.</td></tr>
+        <tr><td>Product sample</td><td class="conditional">If requested</td><td>Importer / Supplier</td><td>May be required for testing/certification.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. Message to Supplier</h2>
+    <div class="code-block">Hi, for Malaysia KPDN MC Mark / secondary battery safety checking, please provide the battery safety documents for the scooter battery.
+
+Required documents:
+- Battery model number
+- Battery specification sheet
+- Battery voltage and capacity
+- Battery Wh rating
+- Cell brand/model and cell datasheet
+- Cell chemistry
+- BMS specification
+- Battery protection details
+- Battery wiring diagram
+- Battery label artwork
+- Battery photos
+- MS IEC 62133:2017 / IEC 62133-2 test report or CB report, if available
+- Manufacturer name and address
+- Factory ISO 9001 certificate, if available</div>
+
+    <h2>7. Message to KPDN / SIRIM QAS</h2>
+    <div class="code-block">Dear Sir/Madam,
+
+We would like to seek confirmation whether KPDN MC Mark / secondary battery safety certification is required for our electric scooter battery.
+
+Product: Electric scooter battery / rechargeable lithium battery pack
+Battery voltage: 36V
+Battery capacity: 6Ah / 7.8Ah
+Battery energy: 216Wh / 280.8Wh
+Battery sold as: [inside complete scooter / replacement battery sold separately]
+Battery chemistry: [Lithium-ion / LiFePO4]
+
+Kindly advise whether MC Mark is required, and whether MS IEC 62133:2017 / IEC 62133-2 test report is acceptable. Please also advise the application process, required documents, sample requirements and estimated processing time.
+
+Thank you.</div>
+
+    <h2>8. Quick Copy Summary</h2>
+    <div class="code-block">KPDN MC Mark for Secondary Battery Flow:
+1. Confirm whether scooter battery falls under KPDN secondary battery MC Mark requirement.
+2. Check whether battery is sold separately or only included inside complete scooter.
+3. Request supplier documents: battery spec, cell datasheet, BMS details, battery label, battery photos, protection details.
+4. Prepare MS IEC 62133:2017 / IEC 62133-2 test report or CB report if available.
+5. Submit enquiry to KPDN / SIRIM QAS to confirm applicability.
+6. If required, apply for certification / MC Mark and provide sample if requested.
+7. Keep approval, test report and label records before sale.</div>
+
+    <p class="small">Prepared as an internal working guide. Final applicability and enforcement should be confirmed with KPDN mySAFE / SIRIM QAS for the exact battery model and sales method.</p>
+  </div>
+</body>
+</html>

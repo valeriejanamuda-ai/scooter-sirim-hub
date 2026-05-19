@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MITI Battery AP Flow</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1120px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 32px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 20px; font-size: 17px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .conditional { color: #7b3fb2; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+    .small { font-size: 13px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MITI Battery AP Flow</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains the MITI Approved Permit (AP) check for new reusable batteries / accumulators for motor vehicles, including batteries related to electric scooters or vehicles.
+    </div>
+
+    <div class="note">
+      <strong>Simple summary:</strong> MITI Battery AP is mainly relevant when the battery is imported separately, or when Customs/MITI treats the battery under motor vehicle battery import requirements. For complete scooter import, the main route may still be MITI AP - Micromobility, but battery AP should be checked if battery is separately declared or sold as replacement battery.
+    </div>
+
+    <h2>1. Official Websites and Guidelines</h2>
+    <table>
+      <thead><tr><th>Reference</th><th>Website / Link</th><th>Use For</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>MITI Standard Operating Procedure for Battery Importation</td>
+          <td><a href="https://www.miti.gov.my/index.php/pages/view/10897" target="_blank">https://www.miti.gov.my/index.php/pages/view/10897</a></td>
+          <td>MITI page for battery importation SOP and AP requirement effective 1 January 2026.</td>
+        </tr>
+        <tr>
+          <td>MITI Approved Permit Main Page</td>
+          <td><a href="https://www.miti.gov.my/ap" target="_blank">https://www.miti.gov.my/ap</a></td>
+          <td>General MITI AP information and ePermit application reference.</td>
+        </tr>
+        <tr>
+          <td>DagangNet / ePermit</td>
+          <td><a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></td>
+          <td>Online AP application system.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. When Is MITI Battery AP Applicable?</h2>
+    <table>
+      <thead><tr><th>Situation</th><th>MITI Battery AP Check Needed?</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td>Battery imported separately as spare/replacement battery</td><td class="mandatory">Yes, must check</td><td>Battery may be declared separately under battery import rules.</td></tr>
+        <tr><td>Battery imported together inside complete scooter</td><td class="conditional">Check</td><td>Main route may be MITI Micromobility AP, but battery AP check may still be needed depending on HS code and Customs/MITI treatment.</td></tr>
+        <tr><td>Complete scooter imported as CBU</td><td class="conditional">Check separately</td><td>May use MITI AP - Micromobility for complete vehicle. Battery documents still needed as supporting/shipping documents.</td></tr>
+        <tr><td>Charger/adaptor only</td><td class="optional">No, different route</td><td>Charger is under ST CoA + ST-SIRIM Label, not MITI Battery AP.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Important:</strong> MITI states that all importations of new reusable batteries / accumulators for motor vehicles under headings 87.01, 87.02, 87.03, 87.04, 87.05, 87.09 and 87.11 require AP from MITI effective 1 January 2026. For scooters, 87.11 may be relevant if the goods are classified under electric motorcycle/scooter categories.
+    </div>
+
+    <h2>3. Overall Flow</h2>
+    <table>
+      <thead><tr><th>Stage</th><th>Platform / Authority</th><th>Purpose</th><th>Mandatory?</th></tr></thead>
+      <tbody>
+        <tr><td>1. Confirm HS code / classification</td><td>Customs / Forwarder / Customs Agent</td><td>Confirm whether battery falls under MITI battery AP scope.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>2. Collect battery documents</td><td>Supplier / Battery Manufacturer</td><td>Prepare battery technical and safety file.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>3. Prepare MITI AP documents</td><td>Importer + Supplier</td><td>Prepare application package.</td><td class="mandatory">Yes, if applicable</td></tr>
+        <tr><td>4. Technical Evaluation Report</td><td>Relevant technical body / accepted evaluator</td><td>Prepare technical evaluation if required by MITI.</td><td class="conditional">If required</td></tr>
+        <tr><td>5. Submit AP application</td><td>DagangNet / ePermit / MITI</td><td>Apply MITI Battery AP.</td><td class="mandatory">Yes, if applicable</td></tr>
+        <tr><td>6. Customs clearance</td><td>Customs / Forwarder</td><td>Use approved AP for import declaration.</td><td class="mandatory">Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Flow Details</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Confirm HS Code / Customs Classification</h3>
+      <p><strong>Purpose:</strong> Confirm whether the imported item is classified as standalone battery, complete scooter/vehicle, or vehicle part.</p>
+      <p><strong>Documents to prepare for customs/agent:</strong></p>
+      <ul>
+        <li>Battery specification sheet</li>
+        <li>Battery model number</li>
+        <li>Battery photos and label</li>
+        <li>Product catalogue</li>
+        <li>Battery purpose, for example electric scooter replacement battery</li>
+        <li>Invoice / proforma invoice</li>
+        <li>Packing list, if available</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory first step</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Collect Battery Technical and Safety Documents</h3>
+      <p><strong>Documents needed from supplier:</strong></p>
+      <ul>
+        <li>Battery model number</li>
+        <li>Battery specification sheet</li>
+        <li>Battery voltage, for example 36V</li>
+        <li>Battery capacity, for example 6Ah / 7.8Ah</li>
+        <li>Battery energy rating, for example 216Wh / 280.8Wh</li>
+        <li>Battery dimensions and weight</li>
+        <li>Cell brand and model</li>
+        <li>Cell chemistry, for example lithium-ion or LiFePO4</li>
+        <li>Battery manufacturer name and address</li>
+        <li>UN38.3 test summary</li>
+        <li>UN38.3 full test report, if available</li>
+        <li>SDS / MSDS</li>
+        <li>IEC 62133-2 / MS IEC 62133 report, if available</li>
+        <li>Technical Evaluation Report, if already available</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory for checking/application preparation</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Prepare MITI AP Application Documents</h3>
+      <p><strong>MITI battery AP document package may include:</strong></p>
+      <ul>
+        <li>Customs Classification Letter / HS code classification</li>
+        <li>Application letter using company letterhead</li>
+        <li>Company profile</li>
+        <li>SSM company registration</li>
+        <li>Importer details</li>
+        <li>Supplier / manufacturer details</li>
+        <li>Product catalogue</li>
+        <li>Battery specification sheet</li>
+        <li>Battery model number</li>
+        <li>Invoice</li>
+        <li>Packing list</li>
+        <li>Country of origin</li>
+        <li>UN38.3 test summary</li>
+        <li>IEC report, if required</li>
+        <li>Technical Evaluation Report, if required</li>
+        <li>DagangNet / ePermit account</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if MITI Battery AP applies</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">4</span>Technical Evaluation Report</h3>
+      <p><strong>Purpose:</strong> Provide technical evidence for battery safety/compliance if MITI requests it.</p>
+      <p><strong>Possible supporting documents:</strong></p>
+      <ul>
+        <li>UN38.3 report / summary</li>
+        <li>IEC 62133-2 / MS IEC 62133 report</li>
+        <li>UN R136 / relevant EV battery system report, if applicable</li>
+        <li>Battery specification and cell datasheet</li>
+        <li>BMS protection information</li>
+        <li>Battery label and model identification</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="conditional">If required by MITI</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">5</span>Submit AP Application</h3>
+      <p><strong>Platform:</strong> DagangNet / ePermit: <a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></p>
+      <p><strong>Purpose:</strong> Apply for MITI AP before importing the battery.</p>
+      <p><strong>Possible outcome:</strong></p>
+      <ul>
+        <li>Approved: proceed with import/customs clearance</li>
+        <li>Queried: submit additional documents or clarification</li>
+        <li>Rejected: review reason and reapply if appropriate</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if battery falls under AP requirement</span></p>
+    </div>
+
+    <h2>5. Mandatory vs Optional</h2>
+    <table>
+      <thead><tr><th>Document / Action</th><th>Status</th><th>Prepared By</th><th>Remarks</th></tr></thead>
+      <tbody>
+        <tr><td>HS code / Customs classification</td><td class="mandatory">Mandatory</td><td>Customs agent / forwarder / importer</td><td>Determines if MITI Battery AP applies.</td></tr>
+        <tr><td>Application letter</td><td class="mandatory">Mandatory if applying</td><td>Importer</td><td>Use company letterhead.</td></tr>
+        <tr><td>Company profile / SSM</td><td class="mandatory">Mandatory if applying</td><td>Importer</td><td>Company documents.</td></tr>
+        <tr><td>Battery specification sheet</td><td class="mandatory">Mandatory</td><td>Supplier</td><td>Core product document.</td></tr>
+        <tr><td>Invoice / packing list</td><td class="mandatory">Mandatory for import</td><td>Supplier</td><td>Shipment documents.</td></tr>
+        <tr><td>UN38.3 test summary</td><td class="mandatory">Mandatory / strongly needed</td><td>Supplier / Lab</td><td>Battery transport safety evidence.</td></tr>
+        <tr><td>SDS / MSDS</td><td class="mandatory">Mandatory / strongly needed</td><td>Supplier / Manufacturer</td><td>Safety handling document.</td></tr>
+        <tr><td>IEC 62133 / MS IEC 62133 report</td><td class="conditional">If required / supporting</td><td>Supplier / Lab</td><td>Battery safety evidence.</td></tr>
+        <tr><td>Technical Evaluation Report</td><td class="conditional">If required by MITI</td><td>Technical body / evaluator</td><td>May be required depending on battery/category.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. Message to Supplier</h2>
+    <div class="code-block">Hi, for Malaysia MITI Battery AP checking, please provide the battery import documents below:
+
+- Battery model number
+- Battery specification sheet
+- Battery voltage/capacity/Wh rating
+- Battery dimensions and weight
+- Cell brand/model and cell chemistry
+- Battery manufacturer name and address
+- UN38.3 test summary
+- UN38.3 full test report, if available
+- SDS/MSDS
+- IEC 62133-2 / MS IEC 62133 report, if available
+- Product catalogue
+- Battery label artwork and photos
+- Country of origin
+- Invoice and packing list</div>
+
+    <h2>7. Quick Copy Summary</h2>
+    <div class="code-block">MITI Battery AP Flow:
+1. Confirm whether battery is imported separately or together with complete scooter.
+2. Confirm HS code / customs classification.
+3. Check whether battery falls under MITI Battery AP scope.
+4. Request supplier documents: battery spec, UN38.3, SDS/MSDS, IEC report if available, invoice, packing list, country of origin.
+5. Prepare company documents and application letter.
+6. Prepare Technical Evaluation Report if required.
+7. Submit AP application through DagangNet/ePermit if applicable.
+8. Use approved AP for customs clearance.</div>
+
+    <p class="small">Prepared as an internal working guide. Final MITI Battery AP applicability should be confirmed with MITI, Customs and your forwarding/customs agent based on the exact HS code and import method.</p>
+  </div>
+</body>
+</html>

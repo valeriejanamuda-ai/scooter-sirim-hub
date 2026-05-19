@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MITI AP Micromobility Approval Flow - Updated with Scenarios</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1180px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 30px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 18px; font-size: 17px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .ok { background: #eefaf0; border-left: 5px solid #2e8b57; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .conditional { color: #7b3fb2; font-weight: bold; }
+    .yes { color: #b00020; font-weight: bold; }
+    .no { color: #2e8b57; font-weight: bold; }
+    .maybe { color: #8a5a00; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .small { font-size: 13px; color: #555; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+    .mini-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 16px 0; }
+    .mini-card { border: 1px solid #d7dce2; background: #fbfcfe; border-radius: 10px; padding: 12px; }
+    .mini-card strong { color: #1f3a5f; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MITI AP Micromobility Approval Flow</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains the MITI Approved Permit (AP) flow for importing micromobility vehicles such as electric scooters into Malaysia, including HS code, MITI pre-check, manual approval, ePermit, quota, repeat batches, defects and replacement scenarios.
+    </div>
+
+    <div class="note">
+      <strong>Core rule:</strong> Do not start paid third-party testing/certification first. Collect supplier basic documents, check HS code, then confirm with MITI whether the scooter is accepted under N150 Micromobility and whether MS2514 is required. Only after MITI confirms the route, proceed with paid testing or third-party documents.
+    </div>
+
+    <h2>1. Official Websites, Contacts and Guidelines</h2>
+    <table>
+      <thead><tr><th>Reference</th><th>Website / Contact</th><th>Use For</th><th>Operating Hours / Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>MITI AP Main Page</td>
+          <td><a href="https://www.miti.gov.my/ap" target="_blank">https://www.miti.gov.my/ap</a></td>
+          <td>MITI AP overview, AP categories and ePermit registration reference.</td>
+          <td>Online portal. Use anytime, subject to website maintenance.</td>
+        </tr>
+        <tr>
+          <td>MITI Other Vehicle AP Page</td>
+          <td><a href="https://www.miti.gov.my/index.php/pages/view/10654" target="_blank">https://www.miti.gov.my/index.php/pages/view/10654</a></td>
+          <td>Other Vehicle AP category page, including Micromobility flowchart/checklist links.</td>
+          <td>Online portal. Use anytime, subject to website maintenance.</td>
+        </tr>
+        <tr>
+          <td>MITI Other Vehicle AP Document List</td>
+          <td><a href="https://www.miti.gov.my/index.php/pages/view/8138" target="_blank">https://www.miti.gov.my/index.php/pages/view/8138</a></td>
+          <td>AP Type (INQ) Other Vehicle document list, AP validity and AP contact details.</td>
+          <td>Online portal. Use anytime, subject to website maintenance.</td>
+        </tr>
+        <tr>
+          <td>MITI AP Team</td>
+          <td>Email: ap@miti.gov.my<br />Tel: 03-6208 4970 / 03-6208 4945</td>
+          <td>Manual AP approval, model/quota registration, AP policy questions, MS2514 waiver/alternative confirmation.</td>
+          <td>Meetings/discussions usually by appointment. Contact MITI by email/phone first.</td>
+        </tr>
+        <tr>
+          <td>MITI Micromobility Flowchart / Checklist</td>
+          <td><a href="https://www.miti.gov.my/miti/resources/Approve%20Permit/Motor%20vehicle/18_OTHER_VEHICLE_PERMANENT_IMPORT_%E2%80%93_MICROMOBILITY_MAC_20251.pdf" target="_blank">MITI Micromobility Flowchart PDF</a></td>
+          <td>Manual AP application, required documents, N150 Micromobility category and DagangNet online AP flow.</td>
+          <td>Reference guideline.</td>
+        </tr>
+        <tr>
+          <td>JKDM HS Explorer</td>
+          <td><a href="https://ezhs.customs.gov.my/" target="_blank">https://ezhs.customs.gov.my/</a></td>
+          <td>Search/check possible HS code, tariff rate, import/export prohibition, SST and duty information.</td>
+          <td>Checking tool only. Final HS code should be confirmed by forwarder/customs agent or Customs if needed.</td>
+        </tr>
+        <tr>
+          <td>Royal Malaysian Customs / JKDM</td>
+          <td><a href="https://www.customs.gov.my/" target="_blank">https://www.customs.gov.my/</a><br />Customs Call Center: 1-300-888-500<br />Email: ccc@customs.gov.my</td>
+          <td>Customs information, classification/ruling enquiry and official Customs references.</td>
+          <td>Customs Call Center / MySST official page states Monday - Friday, 8:00 am - 5:00 pm; closed Saturday, Sunday and public holidays. For formal classification/ruling, confirm process with Customs or your appointed customs agent.</td>
+        </tr>
+        <tr>
+          <td>SIRIM QAS / Testing Enquiry</td>
+          <td>Email: cserviceqas@sirim.my<br />General Line: 03-5544 6000<br /><a href="https://www.sirim-qas.com.my/contact/" target="_blank">SIRIM QAS Contact Page</a></td>
+          <td>Ask whether MS2514 testing is applicable, which department/lab handles it, sample submission address, quotation and testing timeline.</td>
+          <td>Official contact page confirms contact details, but operating hours were not clearly stated in the source checked. Contact SIRIM directly before visiting/submitting samples.</td>
+        </tr>
+        <tr>
+          <td>SIRIM PRISM - MS 2413 / MS 2514</td>
+          <td><a href="https://prism.sirim.my/s/product/ms-2413-ms-2514/01t5g000005SJTLAA4" target="_blank">SIRIM PRISM: MS 2413 / MS 2514</a></td>
+          <td>Reference page for testing services related to MS 2413 / MS 2514.</td>
+          <td>Online portal. Use anytime, subject to website maintenance.</td>
+        </tr>
+        <tr>
+          <td>DagangNet / ePermit</td>
+          <td><a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></td>
+          <td>Online AP application after MITI manual approval/model-quota registration.</td>
+          <td>Online portal. Use anytime, subject to system maintenance.</td>
+        </tr>
+        <tr>
+          <td>DagangNet Careline</td>
+          <td>Tel: 1-300-133-133<br />Email: careline@dagangnet.com<br />WhatsApp: 010-447 5838<br /><a href="https://newepermit.dagangnet.com.my/epermit/login/contact_new_permit.html" target="_blank">ePermit Contact Page</a></td>
+          <td>System support, registration, login, ePermit access and application issues.</td>
+          <td>Official contact page lists Careline contacts but does not clearly state standard hours. Contact Careline directly for latest support timing.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+          <td>Internal reference only.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. MITI AP Category and Important Meaning</h2>
+    <table>
+      <tbody>
+        <tr><th>Permit Type</th><td>MITI Import</td></tr>
+        <tr><th>AP Type</th><td>INQ - Other Vehicle</td></tr>
+        <tr><th>AP Category</th><td>N150 - Micromobility</td></tr>
+        <tr><th>AP Subcategory</th><td>To be determined by MITI Approval Letter.</td></tr>
+        <tr><th>Manual Approval</th><td>Used to approve/register company + brand/model + specification + quota before ePermit.</td></tr>
+        <tr><th>ePermit / Online AP</th><td>Used for actual import shipment after MITI manual approval, usually using invoice, packing list and BL/AWB.</td></tr>
+        <tr><th>AP Validity</th><td>AP is generally valid for 6 months. This normally applies to import/customs clearance, not the sell-through period for goods already legally imported.</td></tr>
+        <tr><th>MITI Sticker / Label</th><td>MITI AP itself usually does not require a MITI sticker/label. However, other approvals may require labels, for example charger ST-SIRIM label, MCMC/SIRIM label for wireless functions, or KPDN MC Mark if applicable.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Classification warning:</strong> Confirm with MITI/Customs whether the product is accepted under N150 Micromobility. MITI notes that micromobility AP does not include moped/electric moped. If the scooter is classified as moped/electric moped, the route may be different or may not be accepted under this AP category.
+    </div>
+
+    <h2>3. Recommended First-Step Flow Before Spending on Third-Party Documents</h2>
+    <div class="mini-flow">
+      <div class="mini-card"><strong>1. Get Supplier Basic Docs</strong><br />Catalogue, specs, photos, brand/model, motor, battery, charger, CBU/CKD, country of origin, proforma invoice.</div>
+      <div class="mini-card"><strong>2. Check HS Code</strong><br />Use HS Explorer for reference, then confirm with forwarder/customs agent.</div>
+      <div class="mini-card"><strong>3. Pre-check with MITI</strong><br />Ask if product is accepted under N150 Micromobility and whether MS2514 is required.</div>
+      <div class="mini-card"><strong>4. Confirm MS2514 Route</strong><br />If MITI asks MS2514, enquire with SIRIM/testing body. Do not send samples to wrong lab.</div>
+      <div class="mini-card"><strong>5. Prepare Paid Reports</strong><br />Only after MITI confirms route, arrange MS2514/other technical reports if required.</div>
+      <div class="mini-card"><strong>6. Manual Approval → ePermit</strong><br />Submit manual approval, get MITI Approval Letter, then apply online AP in ePermit.</div>
+    </div>
+
+    <h2>4. Stage 1: Supplier Basic Documents + HS Code Check</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Collect Supplier Documents First</h3>
+      <p><strong>Purpose:</strong> MITI, forwarder and testing bodies need basic product documents before they can confirm route, HS code or test requirements.</p>
+      <ul>
+        <li>Product catalogue / brochure</li>
+        <li>Full scooter specification sheet</li>
+        <li>Product photos</li>
+        <li>Brand and model / model number</li>
+        <li>Motor specification and wattage</li>
+        <li>Battery specification: voltage, capacity, Wh rating</li>
+        <li>Charger specification</li>
+        <li>Import method: CBU or CKD</li>
+        <li>Country of origin</li>
+        <li>Proforma invoice / invoice, if available</li>
+        <li>Whether battery, charger or spare parts are imported together or separately</li>
+      </ul>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Confirm HS Code / Customs Classification</h3>
+      <p><strong>Purpose:</strong> To confirm whether the product falls under micromobility / electric bicycle / electric scooter / other vehicle classification.</p>
+      <p><strong>How to handle:</strong> Use JKDM HS Explorer as a checking tool, then ask the appointed forwarder/customs agent to propose/confirm the HS code. If the product is unclear or MITI requires official confirmation, request Customs classification/ruling.</p>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory before AP planning</span></p>
+    </div>
+
+    <h2>5. Stage 2: MITI Pre-Check Before Paid Testing</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Ask MITI to Confirm the Correct Route</h3>
+      <p><strong>Purpose:</strong> Avoid paying for the wrong test/report. This is especially important if the scooter is 500W and has no pedals, because MS2514 is usually linked to electric bicycles / pedal-assisted bicycles.</p>
+      <p><strong>Send MITI:</strong></p>
+      <ul>
+        <li>Supplier catalogue, specs and photos</li>
+        <li>Brand/model</li>
+        <li>Motor/battery/charger details</li>
+        <li>CBU or CKD confirmation</li>
+        <li>Country of origin and quantity</li>
+        <li>Proposed HS code / customs classification, if available</li>
+      </ul>
+      <p><strong>Ask MITI:</strong></p>
+      <ul>
+        <li>Is this product accepted under INQ - Other Vehicle / N150 Micromobility?</li>
+        <li>Is MS2514 compliance report required for this exact model?</li>
+        <li>If SIRIM says MS2514 is not applicable, can MITI accept a waiver/written confirmation or alternative document?</li>
+        <li>What documents must be submitted for manual approval?</li>
+        <li>Does this model need manual approval before ePermit?</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Recommended before arranging paid third-party testing</span></p>
+    </div>
+
+    <h2>6. Stage 3: MS2514 / Alternative Compliance Report</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">4</span>Only Arrange MS2514 If MITI Confirms It Is Needed</h3>
+      <p><strong>Purpose:</strong> To obtain the compliance report required by MITI for micromobility AP, if applicable.</p>
+      <p><strong>How to enquire with SIRIM/testing body:</strong> Email SIRIM QAS customer service with product details and ask which department/lab handles MS2514 testing, sample submission address, quotation, sample quantity, test scope and timeline.</p>
+      <p><strong>Do not send sample directly to:</strong> Photovoltaic (PV) Module Testing Laboratory unless SIRIM specifically instructs. PV Module Testing Laboratory is for solar/photovoltaic modules, not electric scooter/micromobility testing.</p>
+      <p><strong>Documents usually needed by testing lab:</strong></p>
+      <ul>
+        <li>Product catalogue / brochure</li>
+        <li>Full specification sheet</li>
+        <li>Model name and model number</li>
+        <li>Product photos</li>
+        <li>User manual</li>
+        <li>Motor, battery, charger and controller specification</li>
+        <li>Wiring diagram, if available</li>
+        <li>Brake system details</li>
+        <li>Lighting / reflector details, if available</li>
+        <li>Speed limit, max load and tyre size</li>
+        <li>Manufacturer name and address</li>
+        <li>Physical product sample for testing, if required</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory only if MITI requires it</span></p>
+    </div>
+
+    <div class="warning">
+      <strong>If SIRIM says MS2514 is not needed / not applicable:</strong> Get SIRIM’s written confirmation and reason. Then send it to MITI and ask whether MITI accepts the AP application without MS2514 or what alternative document is required. SIRIM can advise testing applicability, but MITI decides whether MS2514 can be waived or replaced for AP.
+    </div>
+
+    <h2>7. Stage 4: Manual MITI AP Approval</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">5</span>Prepare and Submit Manual Application</h3>
+      <p><strong>Purpose:</strong> Manual approval is normally used to approve/register the company + model + specification + quota before online ePermit AP can be submitted.</p>
+      <p><strong>How to submit:</strong> Start by contacting MITI AP section at <strong>ap@miti.gov.my</strong>. Submission may be by email, appointment or method instructed by MITI. Confirm directly with MITI before submitting.</p>
+      <p><strong>Documents required:</strong></p>
+      <ul>
+        <li>Application letter using company letterhead</li>
+        <li>Brand and model of micromobility vehicle</li>
+        <li>Form of importation: CKD or CBU</li>
+        <li>Quantity / quota requested</li>
+        <li>Country of origin</li>
+        <li>Company profile / SSM company registration</li>
+        <li>Customs tariff code classification / Appendix 14</li>
+        <li>MS2514 compliance report, or MITI-accepted waiver/alternative document if MS2514 is not applicable</li>
+        <li>Specifications and photos of each micromobility vehicle model</li>
+        <li>Supplier brochure / catalogue</li>
+        <li>Sales report for existing approved models, if applicable</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory for first-time model/quota approval</span>, except sales report is <span class="optional">only if applicable</span>.</p>
+    </div>
+
+    <h2>8. Stage 5: DagangNet / ePermit Online AP Application</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">6</span>Register / Log In and Submit Online AP</h3>
+      <p><strong>Purpose:</strong> To apply for the actual import permit after MITI manual approval/model-quota registration.</p>
+      <p><strong>Apply through:</strong> <a href="https://epermit.dagangnet.com.my/" target="_blank">DagangNet / ePermit Online AP Application</a></p>
+      <p><strong>System issue:</strong> Contact DagangNet Careline: 1-300-133-133, careline@dagangnet.com, WhatsApp 010-447 5838.</p>
+      <p><strong>Approval/quota/model issue:</strong> Contact MITI AP Team: ap@miti.gov.my, 03-6208 4970 / 03-6208 4945.</p>
+      <p><strong>Supporting documents usually needed:</strong></p>
+      <ul>
+        <li>MITI Approval Letter</li>
+        <li>Application letter using company letterhead</li>
+        <li>Bill of Lading / Airway Bill</li>
+        <li>Invoice and Packing List</li>
+        <li>Technical specification / vehicle photos</li>
+        <li>Additional supporting documents, if requested</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory after MITI Approval Letter is obtained</span></p>
+    </div>
+
+    <h2>9. Stage 6: Final Import / Customs Clearance</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">7</span>Approved AP, Payment and Customs Declaration</h3>
+      <p><strong>Purpose:</strong> To use the approved AP for import declaration and customs clearance.</p>
+      <ul>
+        <li>Approved online AP / permit</li>
+        <li>Invoice</li>
+        <li>Packing list</li>
+        <li>Bill of Lading / Airway Bill</li>
+        <li>Customs declaration documents / K1</li>
+        <li>Payment through DagangNet / ePermit, if applicable</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory before goods clearance</span></p>
+    </div>
+
+    <h2>10. Manual Approval vs ePermit</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Purpose</th><th>When Used</th><th>Key Documents</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Manual MITI Approval</strong></td>
+          <td>Approve/register model, specification and quota.</td>
+          <td>First-time model, new brand/model/spec, new quota, or MITI requests review.</td>
+          <td>Company docs, application letter, HS classification, MS2514/waiver/alternative report, specs/photos/catalogue.</td>
+        </tr>
+        <tr>
+          <td><strong>DagangNet / ePermit Online AP</strong></td>
+          <td>Apply AP for actual import shipment.</td>
+          <td>After manual approval, for each shipment/permit depending on invoice/BL/AP quantity.</td>
+          <td>MITI Approval Letter, invoice, packing list, BL/AWB, application letter, technical docs.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>11. Repeat Shipment, AP Validity and Model Change Scenarios</h2>
+    <table>
+      <thead><tr><th>Scenario</th><th>Need Manual MITI Approval?</th><th>Need ePermit / Online AP?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>First time importing Brand A Model X</td><td class="yes">Yes</td><td class="yes">Yes</td><td>Manual approval first, then online AP for shipment.</td></tr>
+        <tr><td>Same Brand A Model X, same specs, repeat shipment, quota still available</td><td class="no">Usually no</td><td class="yes">Usually yes</td><td>Manual approval usually not repeated; online AP may still be needed for shipment.</td></tr>
+        <tr><td>Same product, same approved AP, partial quantity not fully used</td><td class="no">Usually no</td><td class="maybe">Check AP/ePermit condition</td><td>If partial usage/multiple shipment is allowed, balance quantity may be usable within AP validity.</td></tr>
+        <tr><td>AP expired but goods already cleared and still in warehouse</td><td class="no">No</td><td class="no">No</td><td>AP validity is normally for import/clearance. It does not usually stop selling legally imported stock.</td></tr>
+        <tr><td>AP expired and want to import new batch of same approved model</td><td class="maybe">Maybe not, if model/quota still registered</td><td class="yes">Yes</td><td>Usually apply new online AP/ePermit. If quota expired/insufficient, need MITI quota update/manual approval.</td></tr>
+        <tr><td>Quota finished or not enough for new shipment</td><td class="yes">Likely yes</td><td class="yes">Yes</td><td>Need additional quota approval/update from MITI before ePermit.</td></tr>
+        <tr><td>Different brand, even same design</td><td class="yes">Likely yes</td><td class="yes">Yes</td><td>Different brand is likely treated as different approved model identity.</td></tr>
+        <tr><td>Same brand but different model number</td><td class="yes">Likely yes</td><td class="yes">Yes</td><td>New model usually needs manual approval.</td></tr>
+        <tr><td>Same model but different voltage, e.g. 24V / 36V / 48V</td><td class="yes">Likely yes</td><td class="yes">Yes</td><td>Voltage affects specs, battery, performance and safety report coverage.</td></tr>
+        <tr><td>Same model but different motor wattage, battery capacity, controller or speed</td><td class="yes">Likely yes</td><td class="yes">Yes</td><td>Major spec change may be treated as different variant/model.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>12. Quota Meaning and Defect / Replacement Scenarios</h2>
+    <div class="note">
+      <strong>Quota meaning:</strong> Quota means the approved import quantity. It is normally based on the quantity of units entering Malaysia, not the net quantity sold after returns.
+    </div>
+
+    <table>
+      <thead><tr><th>Scenario</th><th>Counts as New Import?</th><th>Uses New Quota / AP?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Customer returns defective unit to your Malaysia warehouse</td><td class="no">No</td><td class="no">No</td><td>Local return only. Keep defect and return records.</td></tr>
+        <tr><td>You replace customer using existing Malaysia warehouse stock</td><td class="no">No</td><td class="no">No</td><td>No new import. Existing imported stock is used.</td></tr>
+        <tr><td>You repair locally and return same unit to customer</td><td class="no">No</td><td class="no">No</td><td>Local service/repair movement only.</td></tr>
+        <tr><td>You export defective unit back to overseas supplier</td><td class="no">Export, not import</td><td class="no">No import quota restored automatically</td><td>Exporting defective unit does not automatically refresh original import quota.</td></tr>
+        <tr><td>Supplier sends replacement unit from overseas to Malaysia</td><td class="yes">Yes</td><td class="yes">Likely yes</td><td>Treat as new import even if free-of-charge warranty replacement, unless MITI/Customs confirms another treatment in writing.</td></tr>
+        <tr><td>Supplier sends spare battery from overseas</td><td class="yes">Yes</td><td class="maybe">Check MITI Battery AP</td><td>May need battery AP check, UN38.3, SDS/MSDS, IEC battery report.</td></tr>
+        <tr><td>Supplier sends charger replacement from overseas</td><td class="yes">Yes</td><td class="maybe">Check ST CoA/ST-SIRIM route</td><td>Charger may require ST CoA / SIRIM consignment / label depending on import route and approval status.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Safe rule:</strong> Replacement units sent from overseas should be treated as new incoming imports and may require new AP/ePermit/quota. Do not assume exported defective units can automatically reuse or restore old quota unless MITI/Customs gives written confirmation.
+    </div>
+
+    <h2>13. New Quota Decision Flow</h2>
+    <div class="flow-box">
+      <div class="code-block">Need more import quantity?
+↓
+Check if same approved model already exists in MITI/ePermit system.
+↓
+Check if quota balance is still available and valid.
+↓
+If quota is available:
+    Proceed with ePermit / online AP for new shipment, subject to MITI/ePermit rules.
+
+If quota is finished, insufficient, expired, or not registered:
+    Request MITI manual approval / quota update first.
+    After MITI updates/registers quota, apply ePermit / online AP.
+
+If brand/model/spec changes:
+    Treat as new model/variant.
+    Manual MITI approval first, then ePermit.</div>
+    </div>
+
+    <h2>14. Labels / Stickers After MITI AP</h2>
+    <table>
+      <thead><tr><th>Approval / Item</th><th>Need Label / Sticker?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>MITI AP for scooter import</td><td class="no">Usually no</td><td>MITI AP is mainly an import permit/approval document for ePermit and Customs clearance.</td></tr>
+        <tr><td>Charger ST CoA + ST-SIRIM</td><td class="yes">Yes, likely</td><td>Regulated charger/adaptor usually needs ST-SIRIM label before sale.</td></tr>
+        <tr><td>SIRIM/MCMC wireless approval</td><td class="maybe">If applicable</td><td>If scooter has Bluetooth/WiFi/GPS/GSM/app control, MCMC/SIRIM labelling may be required.</td></tr>
+        <tr><td>KPDN MC Mark for battery</td><td class="maybe">If applicable</td><td>If secondary battery MC Mark applies, marking/label may be required.</td></tr>
+        <tr><td>IP54/IP65 claim</td><td class="maybe">Claim label/manual wording only</td><td>Not a MITI label, but claim must match test report and safety warning.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>15. Scenarios You May Not Have Considered</h2>
+    <table>
+      <thead><tr><th>Scenario</th><th>Why It Matters</th><th>What To Do</th></tr></thead>
+      <tbody>
+        <tr><td>Mixed shipment with scooter + spare battery + charger</td><td>Each item may trigger different approval route.</td><td>Separate HS codes and compliance checks: scooter MITI AP, battery docs/MITI Battery AP check, charger ST CoA/ST-SIRIM.</td></tr>
+        <tr><td>Same scooter but different charger model</td><td>Charger approval may be model-specific.</td><td>Check whether new charger model needs separate ST CoA/label process.</td></tr>
+        <tr><td>Same scooter but supplier changes battery cell/BMS</td><td>Battery safety report may no longer match actual product.</td><td>Request updated battery report/specs and check whether MITI/SIRIM/KPDN records need update.</td></tr>
+        <tr><td>Different color only</td><td>May not be major spec change, but photos/catalogue may differ.</td><td>Check if MITI treats color as same model variant. Keep catalogue/photos updated.</td></tr>
+        <tr><td>Packaging says IP54/IP65 but no test report</td><td>Unproven product claim risk.</td><td>Request IP report according to IEC 60529 or remove/avoid claim.</td></tr>
+        <tr><td>Bluetooth/app version added later</td><td>Wireless approval may become applicable even if old model had no wireless.</td><td>Check SIRIM/MCMC Type Approval/Hybrid Certification before sale.</td></tr>
+        <tr><td>Supplier sends free sample before approval</td><td>Samples can still require import documentation and possibly special approval.</td><td>Check with forwarder/MITI/SIRIM before shipping samples.</td></tr>
+        <tr><td>AP approved for CBU but shipment packed as CKD/parts</td><td>Import form mismatch can cause customs/AP issue.</td><td>Ensure invoice, packing list and application match actual packing method.</td></tr>
+        <tr><td>Sales platform listing before approvals complete</td><td>Charger/wireless/label requirements may affect legal sale/advertising.</td><td>Complete compliance checklist before publishing or selling.</td></tr>
+        <tr><td>AP quantity differs from invoice/BL/K1 quantity</td><td>Mismatch may cause clearance or audit issue.</td><td>Reconcile quantities before customs declaration.</td></tr>
+        <tr><td>Returned stock is refurbished/resold</td><td>Warranty/safety/liability issue.</td><td>Keep inspection/repair record and avoid selling unsafe battery/charger units.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>16. MITI Application Letter Content</h2>
+    <ul>
+      <li>Company name and letterhead</li>
+      <li>Request to apply for MITI AP</li>
+      <li>Permit Type: MITI Import</li>
+      <li>AP Type: INQ - Other Vehicle</li>
+      <li>AP Category: N150 - Micromobility</li>
+      <li>Brand and model</li>
+      <li>Type of vehicle</li>
+      <li>Form of importation: CKD or CBU</li>
+      <li>Quantity / quota requested</li>
+      <li>Country of origin</li>
+      <li>HS code / customs classification, if available</li>
+      <li>Purpose of import</li>
+      <li>List of attached documents</li>
+      <li>Authorised signature and company stamp</li>
+    </ul>
+
+    <div class="note">
+      <strong>Suggested internal drafting only — not official MITI wording:</strong><br />
+      The imported micromobility vehicles are intended for private area / off-road use only and will not be registered or used on public roads unless permitted by the relevant authorities.<br /><br />
+      Use this only as internal draft wording if appropriate. Do not present it as MITI’s official required sentence unless MITI confirms it in writing.
+    </div>
+
+    <h2>17. Internal Checklist</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Responsible Party</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Collect supplier basic docs</td><td>Supplier / importer</td><td class="mandatory">Must do first</td></tr>
+        <tr><td>Check proposed HS code</td><td>Forwarder / customs agent / importer</td><td class="mandatory">Must do early</td></tr>
+        <tr><td>Confirm product is accepted under N150 Micromobility</td><td>MITI / customs agent / importer</td><td class="mandatory">Must confirm before paid testing</td></tr>
+        <tr><td>Confirm whether MS2514 is required or can be replaced/waived</td><td>MITI + SIRIM/testing body</td><td class="mandatory">Must confirm before testing</td></tr>
+        <tr><td>Confirm brand/model/voltage/wattage variants</td><td>Supplier / importer</td><td class="mandatory">Mandatory before manual approval</td></tr>
+        <tr><td>Prepare company letter and SSM/profile</td><td>Importer</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Arrange MS2514 or alternative compliance report</td><td>Importer + testing body</td><td class="mandatory">Only after MITI confirms requirement</td></tr>
+        <tr><td>Submit manual MITI AP application</td><td>Importer</td><td class="mandatory">Mandatory for new model/quota</td></tr>
+        <tr><td>Receive MITI Approval Letter</td><td>MITI</td><td class="mandatory">Required before online AP</td></tr>
+        <tr><td>Submit online AP via DagangNet / ePermit</td><td>Importer / forwarding agent</td><td class="mandatory">Mandatory for shipment AP</td></tr>
+        <tr><td>Use approved AP for customs clearance</td><td>Forwarder / customs agent</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Keep AP, K1, invoice, packing list and BL/AWB records</td><td>Importer</td><td class="mandatory">Mandatory for audit/traceability</td></tr>
+      </tbody>
+    </table>
+
+    <h2>18. Quick Copy Summary</h2>
+    <div class="code-block">MITI AP Micromobility Flow:
+1. Collect supplier basic documents first: catalogue, specs, photos, brand/model, motor, battery, charger, CBU/CKD, country of origin and proforma invoice.
+2. Check proposed HS code. HS code finder is only a checking tool; final HS code should be confirmed by forwarder/customs agent or Customs if needed.
+3. Pre-check with MITI before paid testing: confirm whether product is accepted under INQ - Other Vehicle / N150 Micromobility and whether MS2514 is required.
+4. If MITI requires MS2514, enquire with SIRIM/testing body. Do not send sample to PV Module Testing Laboratory unless instructed.
+5. If SIRIM says MS2514 is not applicable, get written confirmation and ask MITI whether they accept waiver or alternative document.
+6. Prepare manual MITI AP documents and submit manual application to approve/register model and quota.
+7. Receive MITI Approval Letter.
+8. Register/log in to DagangNet/ePermit and submit online AP using MITI Approval Letter, invoice, packing list, BL/AWB and product documents.
+9. Once approved, proceed with payment, permit printing/declaration and customs clearance.
+10. MITI AP itself usually does not require a sticker, but charger/wireless/battery approvals may require labels.
+
+Scenario rules:
+- Same exact model/spec with quota balance: usually ePermit only for new shipment.
+- New brand/model/voltage/wattage/major spec: likely manual approval first.
+- Quota finished or insufficient: likely MITI manual quota update first, then ePermit.
+- AP expired but goods already legally imported/cleared: normally no need to renew AP just to continue selling existing warehouse stock.
+- Overseas warranty replacement units: treat as new import and likely use new quota/AP unless MITI/Customs confirms otherwise.</div>
+
+    <p class="small">Prepared as an internal working guide for MITI AP micromobility planning. Final requirements should be confirmed with MITI, DagangNet, Customs, SIRIM/testing body and your forwarding/customs agent before import.</p>
+  </div>
+</body>
+</html>

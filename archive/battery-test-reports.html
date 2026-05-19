@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Reports: MS IEC 62133 / UN38.3 / SDS-MSDS</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1120px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 32px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 20px; font-size: 17px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .conditional { color: #7b3fb2; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+    .small { font-size: 13px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Battery Reports: MS IEC 62133:2017 / IEC 62133-2, UN38.3, SDS/MSDS</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains the main battery documents needed for scooter lithium batteries: battery safety report, transport safety report, and safety handling document.
+    </div>
+
+    <div class="note">
+      <strong>Simple summary:</strong> These documents are not the same. <strong>MS IEC 62133 / IEC 62133-2</strong> is for battery product safety. <strong>UN38.3</strong> is for lithium battery transport safety. <strong>SDS/MSDS</strong> is for chemical/safety handling information.
+    </div>
+
+    <h2>1. Official Websites and Guidelines</h2>
+    <table>
+      <thead><tr><th>Reference</th><th>Website / Link</th><th>Use For</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>SIRIM PRISM - MS IEC 62133:2017</td>
+          <td><a href="https://prism.sirim.my/s/product/ms-iec-62133-2017/01t5g000005SHrtAAG" target="_blank">SIRIM PRISM MS IEC 62133:2017</a></td>
+          <td>Product certification scheme for secondary battery under MS IEC 62133 / IEC 62133.</td>
+        </tr>
+        <tr>
+          <td>KPDN Secondary Battery Guideline</td>
+          <td><a href="https://mysafe.kpdn.gov.my/img/portal/consumer-safety/Garis%20Panduan%20Pematuhan%20Standard%20Keselamatan%20Bateri%20Sekunder%202018.pdf" target="_blank">KPDN Secondary Battery Guideline PDF</a></td>
+          <td>Refers to MS IEC 62133:2017 / IEC 62133 for secondary battery safety compliance.</td>
+        </tr>
+        <tr>
+          <td>IECEE IEC 62133-2:2017</td>
+          <td><a href="https://www.iecee.org/certification/iec-standards/iec-62133-22017" target="_blank">https://www.iecee.org/certification/iec-standards/iec-62133-22017</a></td>
+          <td>International reference for IEC 62133-2:2017 lithium battery safety standard.</td>
+        </tr>
+        <tr>
+          <td>IATA Lithium Battery Guidance Document</td>
+          <td><a href="https://www.iata.org/contentassets/05e6d8742b0047259bf3a700bc9d42b9/lithium-battery-guidance-document.pdf" target="_blank">IATA Lithium Battery Guidance PDF</a></td>
+          <td>Air transport guidance for lithium batteries, packaging, marking, labelling and documentation.</td>
+        </tr>
+        <tr>
+          <td>DHL Lithium Battery Shipping Guide</td>
+          <td><a href="https://www.dhl.com/discover/en-my/logistics-advice/import-export-advice/how-to-ship-batteries" target="_blank">DHL Malaysia Battery Shipping Guide</a></td>
+          <td>Carrier guidance that lithium batteries are dangerous goods and require proper handling/shipping documentation.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. Difference Between the Documents</h2>
+    <table>
+      <thead><tr><th>Document</th><th>Purpose</th><th>Needed For</th><th>Not a Replacement For</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>MS IEC 62133:2017 / IEC 62133-2</strong></td>
+          <td>Battery safety test report for rechargeable lithium cells/batteries.</td>
+          <td>Battery safety certification, KPDN MC Mark check, technical evaluation, product safety file.</td>
+          <td>Does not replace UN38.3 shipping report.</td>
+        </tr>
+        <tr>
+          <td><strong>UN38.3</strong></td>
+          <td>Lithium battery transport safety test report/summary.</td>
+          <td>Shipping, forwarder, airline/sea carrier, customs/logistics documentation.</td>
+          <td>Does not replace MS IEC 62133 product safety report.</td>
+        </tr>
+        <tr>
+          <td><strong>SDS / MSDS</strong></td>
+          <td>Safety Data Sheet / Material Safety Data Sheet for chemical/safety handling.</td>
+          <td>Shipment handling, dangerous goods review, warehouse safety, emergency response.</td>
+          <td>Does not replace test reports.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Where Each Document Is Used</h2>
+    <table>
+      <thead><tr><th>Area</th><th>MS IEC 62133 / IEC 62133-2</th><th>UN38.3</th><th>SDS/MSDS</th></tr></thead>
+      <tbody>
+        <tr><td>Battery safety / KPDN MC Mark</td><td class="mandatory">Main report</td><td class="recommended">Supporting</td><td class="recommended">Supporting</td></tr>
+        <tr><td>Battery shipping / import logistics</td><td class="optional">Not main</td><td class="mandatory">Main report</td><td class="mandatory">Main document</td></tr>
+        <tr><td>MITI Battery AP check</td><td class="conditional">If IEC report requested</td><td class="mandatory">Often required</td><td class="mandatory">Often required</td></tr>
+        <tr><td>Complete scooter MITI AP</td><td class="recommended">Supporting battery file</td><td class="recommended">Supporting/shipping file</td><td class="recommended">Supporting/shipping file</td></tr>
+        <tr><td>Charger ST CoA</td><td class="optional">No</td><td class="optional">No</td><td class="optional">No</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Overall Flow</h2>
+    <table>
+      <thead><tr><th>Stage</th><th>Purpose</th><th>Mandatory?</th></tr></thead>
+      <tbody>
+        <tr><td>1. Confirm battery model and chemistry</td><td>Make sure all reports match exact battery model.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>2. Request existing reports from supplier</td><td>Ask for MS IEC 62133 / IEC 62133-2, UN38.3 and SDS/MSDS.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>3. Verify report consistency</td><td>Check model number, manufacturer, voltage, capacity, Wh and date.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>4. Arrange new testing if missing</td><td>Use SIRIM/accredited lab or battery testing lab if supplier cannot provide acceptable reports.</td><td class="conditional">If missing/not accepted</td></tr>
+        <tr><td>5. Keep documents in compliance file</td><td>Use for import, shipping, KPDN/MC, MITI, forwarder and internal safety records.</td><td class="mandatory">Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. MS IEC 62133:2017 / IEC 62133-2</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Battery Product Safety Report</h3>
+      <p><strong>Purpose:</strong> Safety test report for rechargeable lithium battery/cell product safety.</p>
+      <p><strong>Ask supplier for:</strong></p>
+      <ul>
+        <li>MS IEC 62133:2017 test report, or</li>
+        <li>IEC 62133-2 test report, or</li>
+        <li>CB certificate/report to IEC 62133-2, if available</li>
+      </ul>
+      <p><strong>Check the report includes:</strong></p>
+      <ul>
+        <li>Battery model number</li>
+        <li>Cell model number</li>
+        <li>Battery manufacturer name</li>
+        <li>Voltage and capacity</li>
+        <li>Test standard</li>
+        <li>Test lab name</li>
+        <li>Test date</li>
+        <li>Pass result</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Important for battery safety / KPDN MC Mark / technical file</span></p>
+    </div>
+
+    <h2>6. UN38.3</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Lithium Battery Transport Report</h3>
+      <p><strong>Purpose:</strong> Shows the lithium battery has passed transport safety tests before shipping.</p>
+      <p><strong>Ask supplier for:</strong></p>
+      <ul>
+        <li>UN38.3 test summary</li>
+        <li>UN38.3 full test report, if available</li>
+        <li>Battery model number matching invoice/product label</li>
+        <li>Battery Wh rating</li>
+        <li>Battery gross/net weight and dimensions</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Usually mandatory for lithium battery shipment/logistics</span></p>
+    </div>
+
+    <h2>7. SDS / MSDS</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Safety Handling Document</h3>
+      <p><strong>Purpose:</strong> Provides chemical, safety, hazard, storage, handling and emergency information.</p>
+      <p><strong>Check SDS/MSDS includes:</strong></p>
+      <ul>
+        <li>Product/battery identification</li>
+        <li>Manufacturer/supplier information</li>
+        <li>Composition/information on ingredients</li>
+        <li>Hazards identification</li>
+        <li>First-aid measures</li>
+        <li>Fire-fighting measures</li>
+        <li>Accidental release measures</li>
+        <li>Handling and storage</li>
+        <li>Transport information</li>
+        <li>Disposal information</li>
+        <li>Issue date / revision date</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Usually mandatory for shipment/logistics and warehouse safety file</span></p>
+    </div>
+
+    <h2>8. Verification Checklist</h2>
+    <table>
+      <thead><tr><th>Check Item</th><th>Why It Matters</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Battery model number matches across all documents</td><td>Avoid rejection by forwarder/authority due to mismatch.</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Voltage/capacity/Wh are consistent</td><td>Must match battery label and shipment declaration.</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Battery manufacturer name is consistent</td><td>Important for traceability.</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>UN38.3 report is for the same battery/cell</td><td>Transport document must match goods.</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>SDS/MSDS is not expired/outdated</td><td>Forwarder may reject old/incomplete SDS.</td><td class="recommended">Recommended</td></tr>
+        <tr><td>Report is readable and signed/stamped if applicable</td><td>Improves acceptance by authority/carrier.</td><td class="recommended">Recommended</td></tr>
+      </tbody>
+    </table>
+
+    <h2>9. Message to Supplier</h2>
+    <div class="code-block">Hi, for Malaysia import/shipping and battery safety checking, please provide the lithium battery documents below:
+
+1. MS IEC 62133:2017 / IEC 62133-2 test report or CB report, if available
+2. UN38.3 test summary
+3. UN38.3 full test report, if available
+4. SDS / MSDS
+5. Battery specification sheet
+6. Battery model number
+7. Battery voltage, capacity and Wh rating
+8. Battery dimensions and gross/net weight
+9. Cell brand/model and cell datasheet
+10. Battery manufacturer name and address
+
+Please ensure the battery model number matches the invoice, product label and test reports.</div>
+
+    <h2>10. Quick Copy Summary</h2>
+    <div class="code-block">Battery Reports Summary:
+- MS IEC 62133:2017 / IEC 62133-2 = battery safety report for rechargeable lithium battery.
+- UN38.3 = lithium battery transport safety report for shipping/import logistics.
+- SDS/MSDS = safety handling document for chemical/dangerous goods handling.
+
+Correct flow:
+1. Confirm exact battery model, voltage, capacity and Wh rating.
+2. Request MS IEC 62133 / IEC 62133-2, UN38.3 and SDS/MSDS from supplier.
+3. Check all documents match the same battery model and manufacturer.
+4. Use UN38.3 + SDS/MSDS for shipping/logistics.
+5. Use MS IEC 62133 / IEC 62133-2 for battery safety, KPDN MC Mark check and technical file.
+6. Arrange new testing if supplier reports are missing, outdated or not accepted.</div>
+
+    <p class="small">Prepared as an internal working guide. Final document acceptance depends on the authority, carrier, forwarder, testing lab and exact battery classification.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MITI AP Micromobility Approval Flow</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 24px; background: #f7f7f7; color: #222; }
+    .container { max-width: 1120px; margin: auto; background: #fff; padding: 28px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    h1 { margin-top: 0; color: #1f3a5f; font-size: 28px; }
+    h2 { margin-top: 32px; color: #1f3a5f; border-bottom: 2px solid #d9e3f0; padding-bottom: 6px; font-size: 21px; }
+    h3 { color: #2f4f6f; margin-top: 20px; font-size: 17px; }
+    .summary { background: #eef6ff; border-left: 5px solid #4d8fd6; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .note { background: #fff8e6; border-left: 5px solid #f0b429; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    .warning { background: #fff0f0; border-left: 5px solid #c0392b; padding: 12px 16px; margin: 18px 0; border-radius: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+    th { background: #eaf0f7; color: #1f3a5f; text-align: left; }
+    tr:nth-child(even) { background: #fafafa; }
+    ul { margin-top: 8px; }
+    a { color: #1c5f9e; text-decoration: none; word-break: break-word; }
+    a:hover { text-decoration: underline; }
+    .mandatory { color: #b00020; font-weight: bold; }
+    .optional { color: #555; font-weight: bold; }
+    .recommended { color: #8a5a00; font-weight: bold; }
+    .flow-box { border: 1px solid #d7dce2; border-radius: 10px; padding: 16px; margin: 14px 0; background: #fcfcfc; }
+    .step-number { display: inline-block; background: #1f3a5f; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+    .small { font-size: 13px; color: #555; }
+    .code-block { background: #f2f4f7; border: 1px solid #d7dce2; border-radius: 8px; padding: 12px; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MITI AP Micromobility Approval Flow</h1>
+
+    <div class="summary">
+      <strong>Purpose:</strong> This guide explains the MITI Approved Permit (AP) flow for importing micromobility vehicles such as electric scooter / electric bicycle type products into Malaysia.
+    </div>
+
+    <div class="note">
+      <strong>Simple summary:</strong> The MITI AP flow has 2 stages: <strong>Manual MITI Approval</strong> first, then <strong>DagangNet / ePermit Online AP Application</strong> for the actual shipment.
+    </div>
+
+    <h2>1. Official Websites and Guidelines</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Reference</th>
+          <th>Website / Link</th>
+          <th>Use For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MITI AP Main Page</td>
+          <td><a href="https://www.miti.gov.my/ap" target="_blank">https://www.miti.gov.my/ap</a></td>
+          <td>MITI AP overview, AP categories and ePermit registration reference.</td>
+        </tr>
+        <tr>
+          <td>MITI Other Vehicles AP Page</td>
+          <td><a href="https://www.miti.gov.my/index.php/pages/view/10654" target="_blank">https://www.miti.gov.my/index.php/pages/view/10654</a></td>
+          <td>Other Vehicle AP category page, including Micromobility flowchart/checklist links.</td>
+        </tr>
+        <tr>
+          <td>MITI Other Vehicle AP Document List</td>
+          <td><a href="https://www.miti.gov.my/index.php/pages/view/8138" target="_blank">https://www.miti.gov.my/index.php/pages/view/8138</a></td>
+          <td>MITI AP Type (INQ) Other Vehicle document list and contact details.</td>
+        </tr>
+        <tr>
+          <td>MITI Micromobility Flowchart / Checklist</td>
+          <td><a href="https://www.miti.gov.my/miti/resources/Approve%20Permit/Motor%20vehicle/18_OTHER_VEHICLE_PERMANENT_IMPORT_%E2%80%93_MICROMOBILITY_MAC_20251.pdf" target="_blank">MITI Micromobility Flowchart PDF</a></td>
+          <td>Manual AP application, required documents, N150 Micromobility category, DagangNet online AP flow.</td>
+        </tr>
+        <tr>
+          <td>DagangNet / ePermit</td>
+          <td><a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></td>
+          <td>Online AP application after MITI manual approval letter is obtained.</td>
+        </tr>
+        <tr>
+          <td>User Reference Folder</td>
+          <td><a href="#removed" target="_blank">Google Drive reference folder</a></td>
+          <td>Internal shared folder for saved guidelines, screenshots and reference documents.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. MITI AP Category</h2>
+    <table>
+      <tbody>
+        <tr><th>Permit Type</th><td>MITI Import</td></tr>
+        <tr><th>AP Type</th><td>INQ - Other Vehicle</td></tr>
+        <tr><th>AP Category</th><td>N150 - Micromobility</td></tr>
+        <tr><th>AP Subcategory</th><td>To be determined by MITI Approval Letter</td></tr>
+        <tr><th>Application Method</th><td>Manual AP application first, then online AP application via DagangNet / ePermit</td></tr>
+        <tr><th>Estimated Processing Time</th><td>Minimum 2 weeks / around 10 working days, subject to MITI review</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning">
+      <strong>Important:</strong> Confirm the HS code and product classification first. MITI notes that micromobility AP does not include moped / electric moped. If the product is considered moped / electric moped instead of micromobility, the route may be different or may not be accepted under this AP category.
+    </div>
+
+    <h2>3. Overall Flow</h2>
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>Platform / Authority</th><th>Purpose</th><th>Mandatory?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. HS code verification</td><td>Customs / Forwarder / Customs Agent</td><td>Confirm customs tariff classification before AP.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>2. Prepare manual AP documents</td><td>Importer + Supplier + Testing Lab</td><td>Prepare MITI manual application file.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>3. MS2514 compliance report</td><td>SIRIM / Accredited Lab / Accepted Testing Body</td><td>Compliance report required by MITI checklist.</td><td class="mandatory">Yes, if required by MITI</td></tr>
+        <tr><td>4. Submit manual AP application</td><td>MITI</td><td>Obtain MITI Approval Letter.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>5. DagangNet / ePermit registration</td><td>DagangNet / ePermit</td><td>Prepare online AP application access.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>6. Submit online AP application</td><td>DagangNet / ePermit / MITI</td><td>Apply AP for actual shipment using MITI Approval Letter.</td><td class="mandatory">Yes</td></tr>
+        <tr><td>7. Customs declaration / clearance</td><td>Customs / Forwarder</td><td>Use approved AP for import declaration and clearance.</td><td class="mandatory">Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Stage 1: HS Code Verification</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">1</span>Confirm HS Code / Customs Classification</h3>
+      <p><strong>Purpose:</strong> To confirm whether the product falls under micromobility / electric bicycle / electric scooter / other vehicle classification.</p>
+      <p><strong>Who handles:</strong> Forwarding agent, customs agent, or Customs classification route.</p>
+      <p><strong>Documents to prepare:</strong></p>
+      <ul>
+        <li>Product catalogue / brochure</li>
+        <li>Full scooter specification sheet</li>
+        <li>Product photos</li>
+        <li>Model name and model number</li>
+        <li>Battery specification</li>
+        <li>Motor wattage</li>
+        <li>Charger details</li>
+        <li>Invoice / proforma invoice, if available</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory</span></p>
+    </div>
+
+    <h2>5. Stage 2: Manual MITI AP Application</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">2</span>Prepare MITI Manual Application Documents</h3>
+      <p><strong>Purpose:</strong> To get MITI manual approval for the micromobility model/category.</p>
+      <p><strong>Documents required:</strong></p>
+      <ul>
+        <li>Application letter using company letterhead</li>
+        <li>Company profile / SSM company registration</li>
+        <li>Customs tariff code classification / Appendix 14</li>
+        <li>MS2514 compliance report / test report</li>
+        <li>Specifications and photos of each micromobility vehicle model</li>
+        <li>Supplier brochure / catalogue</li>
+        <li>Sales report for existing approved models, if applicable</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory</span>, except sales report is <span class="optional">only if applicable</span>.</p>
+    </div>
+
+    <h2>6. Document Source Breakdown</h2>
+    <table>
+      <thead>
+        <tr><th>No.</th><th>Document</th><th>Source / Action</th><th>Mandatory?</th><th>How to Prepare</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Application letter using company letterhead</td><td>You prepare</td><td class="mandatory">Yes</td><td>Use company letterhead. Include brand/model, CKD or CBU, quantity and country of origin.</td></tr>
+        <tr><td>1(a)</td><td>Brand and model</td><td>Supplier provides</td><td class="mandatory">Yes</td><td>Must match catalogue, specification sheet, photos and invoice.</td></tr>
+        <tr><td>1(b)</td><td>Form of importation: CKD or CBU</td><td>Confirm with supplier / forwarder</td><td class="mandatory">Yes</td><td>CBU means complete assembled unit. CKD means parts/components for local assembly.</td></tr>
+        <tr><td>1(c)</td><td>Quantity</td><td>You prepare based on import plan / invoice</td><td class="mandatory">Yes</td><td>Use actual import quantity.</td></tr>
+        <tr><td>1(d)</td><td>Country of origin</td><td>Supplier provides</td><td class="mandatory">Yes</td><td>Use manufacturer/export origin, supported by invoice or certificate of origin if available.</td></tr>
+        <tr><td>2</td><td>Company profile / SSM</td><td>You prepare</td><td class="mandatory">Yes</td><td>Attach latest SSM and company profile PDF.</td></tr>
+        <tr><td>3</td><td>Customs tariff code classification / Appendix 14</td><td>Obtain from Customs / customs agent / forwarder</td><td class="mandatory">Yes</td><td>Submit product details to agent/Customs to obtain classification.</td></tr>
+        <tr><td>4</td><td>MS2514 compliance report / test report</td><td>Arrange with SIRIM / accredited lab / accepted testing body</td><td class="mandatory">Yes, if required by MITI</td><td>Provide sample, specs, photos, manual and technical documents to lab.</td></tr>
+        <tr><td>5</td><td>Specifications and photos of each model</td><td>Supplier provides</td><td class="mandatory">Yes</td><td>Get clear model-specific spec sheet and photos for every model/variant.</td></tr>
+        <tr><td>6</td><td>Supplier brochure / catalogue</td><td>Supplier provides</td><td class="mandatory">Yes</td><td>Use official PDF catalogue, brochure or datasheet.</td></tr>
+        <tr><td>7</td><td>Sales report for existing approved models</td><td>You prepare, only if applicable</td><td class="optional">Optional / if applicable</td><td>Only needed if the model was already approved/imported/sold before.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. MS2514 Compliance Report</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">3</span>Arrange MS2514 Testing / Assessment</h3>
+      <p><strong>Purpose:</strong> To obtain the compliance report required by MITI for micromobility AP.</p>
+      <p><strong>Documents usually needed by testing lab:</strong></p>
+      <ul>
+        <li>Product catalogue / brochure</li>
+        <li>Full specification sheet</li>
+        <li>Model name and model number</li>
+        <li>Product photos</li>
+        <li>User manual</li>
+        <li>Motor specification</li>
+        <li>Battery specification</li>
+        <li>Charger specification</li>
+        <li>Controller specification, if available</li>
+        <li>Wiring diagram, if available</li>
+        <li>Brake system details</li>
+        <li>Lighting / reflector details, if available</li>
+        <li>Speed limit details</li>
+        <li>Max load</li>
+        <li>Tyre size</li>
+        <li>Manufacturer name and address</li>
+        <li>Physical product sample for testing, if required</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory if MITI requires MS2514 report</span></p>
+    </div>
+
+    <div class="warning">
+      <strong>Important:</strong> MS2514 is commonly linked to electric bicycles / electric pedal-assisted bicycles. If the product is a 500W electric scooter with no pedals, confirm with MITI or the testing body whether MS2514 is the correct standard before paying for testing.
+    </div>
+
+    <h2>8. Stage 3: Submit Manual AP Application to MITI</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">4</span>MITI Manual Approval</h3>
+      <p><strong>Purpose:</strong> To receive the MITI Approval Letter for the micromobility AP route.</p>
+      <p><strong>Possible outcome:</strong></p>
+      <ul>
+        <li>Approved: MITI issues Approval Letter</li>
+        <li>Rejected: Review MITI remarks and correct/reapply</li>
+        <li>Queried: Submit additional documents or clarification</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory before online DagangNet / ePermit AP stage</span></p>
+    </div>
+
+    <h2>9. Stage 4: DagangNet / ePermit Online AP Application</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">5</span>Register / Log In to DagangNet</h3>
+      <p><strong>Purpose:</strong> To access the online AP application system.</p>
+      <ul>
+        <li>Existing company: log in using existing DagangNet / ePermit account.</li>
+        <li>New company: register first and wait for registration approval.</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory</span></p>
+    </div>
+
+    <div class="flow-box">
+      <h3><span class="step-number">6</span>Submit Online AP Application</h3>
+      <p><strong>Purpose:</strong> To apply for the actual AP for import/shipment after MITI manual approval.</p>
+      <p><strong>Supporting documents usually needed:</strong></p>
+      <ul>
+        <li>MITI Approval Letter</li>
+        <li>Application letter using company letterhead</li>
+        <li>Bill of Lading / Airway Bill</li>
+        <li>Invoice and Packing List</li>
+        <li>Technical specification / vehicle photos</li>
+        <li>Additional supporting documents, if requested</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory after MITI Approval Letter is obtained</span></p>
+    </div>
+
+    <h2>10. Final Import / Customs Clearance</h2>
+    <div class="flow-box">
+      <h3><span class="step-number">7</span>Approved AP, Payment and Customs Declaration</h3>
+      <p><strong>Purpose:</strong> To use the approved AP for import declaration and customs clearance.</p>
+      <p><strong>Documents involved:</strong></p>
+      <ul>
+        <li>Approved online AP / permit</li>
+        <li>Invoice</li>
+        <li>Packing list</li>
+        <li>Bill of Lading / Airway Bill</li>
+        <li>Customs declaration documents</li>
+        <li>Payment through DagangNet / ePermit, if applicable</li>
+      </ul>
+      <p><strong>Status:</strong> <span class="mandatory">Mandatory before goods clearance</span></p>
+    </div>
+
+    <h2>11. Application Letter Content</h2>
+    <p>The MITI application letter should include:</p>
+    <ul>
+      <li>Company name and letterhead</li>
+      <li>Request to apply for MITI AP</li>
+      <li>Permit Type: MITI Import</li>
+      <li>AP Type: INQ - Other Vehicle</li>
+      <li>AP Category: N150 - Micromobility</li>
+      <li>Brand and model</li>
+      <li>Type of vehicle</li>
+      <li>Form of importation: CKD or CBU</li>
+      <li>Quantity</li>
+      <li>Country of origin</li>
+      <li>HS code / customs classification, if available</li>
+      <li>Purpose of import</li>
+      <li>List of attached documents</li>
+      <li>Authorised signature and company stamp</li>
+    </ul>
+
+    <div class="note">
+      <strong>Suggested wording:</strong><br />
+      The imported micromobility vehicles are intended for private area / off-road use only and will not be registered or used on public roads unless permitted by the relevant authorities.
+    </div>
+
+    <h2>12. Internal Checklist</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Responsible Party</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Confirm HS code / customs classification</td><td>Forwarder / customs agent / importer</td><td class="mandatory">Must do first</td></tr>
+        <tr><td>Confirm product is accepted under micromobility AP route</td><td>MITI / customs agent / importer</td><td class="mandatory">Must confirm</td></tr>
+        <tr><td>Request product specifications, photos and catalogue</td><td>Supplier</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Prepare company letter and SSM/profile</td><td>Importer</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Arrange MS2514 compliance report</td><td>Importer + Testing Lab</td><td class="mandatory">Mandatory if required</td></tr>
+        <tr><td>Submit manual MITI AP application</td><td>Importer</td><td class="mandatory">Mandatory</td></tr>
+        <tr><td>Receive MITI Approval Letter</td><td>MITI</td><td class="mandatory">Required before online AP</td></tr>
+        <tr><td>Submit online AP via DagangNet / ePermit</td><td>Importer / forwarding agent</td><td class="mandatory">Mandatory for shipment AP</td></tr>
+        <tr><td>Use approved AP for customs clearance</td><td>Forwarder / customs agent</td><td class="mandatory">Mandatory</td></tr>
+      </tbody>
+    </table>
+
+    <h2>13. Quick Copy Summary</h2>
+    <div class="code-block">MITI AP Micromobility Flow:
+1. Confirm HS code / customs classification.
+2. Confirm product category is accepted under INQ - Other Vehicle / N150 Micromobility.
+3. Request supplier documents: specs, photos, brochure/catalogue, model details, country of origin.
+4. Arrange MS2514 compliance report if required by MITI.
+5. Prepare company documents: application letter, company profile, SSM.
+6. Submit manual MITI AP application.
+7. Receive MITI Approval Letter.
+8. Register/log in to DagangNet / ePermit.
+9. Submit online AP application with MITI Approval Letter, invoice, packing list, BL/AWB and product documents.
+10. Once approved, proceed with payment, permit printing/declaration and customs clearance.</div>
+
+    <p class="small">Prepared as an internal working guide for MITI AP micromobility
