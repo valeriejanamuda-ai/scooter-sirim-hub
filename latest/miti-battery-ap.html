@@ -1,23 +1,86 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MITI Battery AP Flow</title><style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:24px;background:#f7f7f7;color:#222}.container{max-width:1180px;margin:auto;background:#fff;padding:28px;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08)}h1{margin-top:0;color:#1f3a5f}h2{margin-top:28px;color:#1f3a5f;border-bottom:2px solid #d9e3f0;padding-bottom:6px;font-size:21px}.summary{background:#eef6ff;border-left:5px solid #4d8fd6;padding:12px 16px;margin:18px 0;border-radius:6px}.note{background:#fff8e6;border-left:5px solid #f0b429;padding:12px 16px;margin:18px 0;border-radius:6px}.warning{background:#fff0f0;border-left:5px solid #c0392b;padding:12px 16px;margin:18px 0;border-radius:6px}table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px}th,td{border:1px solid #ddd;padding:10px;vertical-align:top}th{background:#eaf0f7;color:#1f3a5f;text-align:left}tr:nth-child(even){background:#fafafa}a{color:#1c5f9e;text-decoration:none;word-break:break-word}.yes{color:#b00020;font-weight:bold}.no{color:#2e8b57;font-weight:bold}.maybe{color:#8a5a00;font-weight:bold}.mandatory{color:#b00020;font-weight:bold}.flow-box{border:1px solid #d7dce2;border-radius:10px;padding:16px;margin:14px 0;background:#fcfcfc}.code-block{background:#f2f4f7;border:1px solid #d7dce2;border-radius:8px;padding:12px;white-space:pre-wrap;font-family:Consolas,monospace;font-size:13px}.small{font-size:13px;color:#555}</style></head><body><div class="container"><h1>MITI Battery AP Flow</h1><div class="summary"><strong>Purpose:</strong> This guide covers MITI Battery AP checking for new reusable batteries / accumulators related to electric scooters or motor vehicles.</div><div class="note"><strong>Core rule:</strong> Check MITI Battery AP mainly when the battery is imported separately, sold as spare/replacement, or declared under a battery HS code. If battery is inside a complete scooter, the main route may be MITI Micromobility AP, but battery documents are still needed for shipping and technical support.</div><h2>1. Official Websites and Contacts</h2><table><thead><tr><th>Reference</th><th>Website / Contact</th><th>Use For</th><th>Hours / Notes</th></tr></thead><tbody><tr><td>MITI Battery Importation SOP</td><td><a href="https://www.miti.gov.my/index.php/pages/view/10897" target="_blank">MITI Battery SOP page</a></td><td>Battery importation SOP and AP requirement effective 1 January 2026.</td><td>Online reference; subject to updates.</td></tr><tr><td>MITI AP Main Page</td><td><a href="https://www.miti.gov.my/ap" target="_blank">https://www.miti.gov.my/ap</a></td><td>General AP information and ePermit reference.</td><td>Online portal; subject to maintenance.</td></tr><tr><td>MITI AP Team</td><td>Email: ap@miti.gov.my<br/>Tel: 03-6208 4970 / 03-6208 4945</td><td>AP applicability, battery AP clarification, quota/model issue.</td><td>MITI states AP meetings/discussions are by appointment. Contact MITI first.</td></tr><tr><td>DagangNet / ePermit</td><td><a href="https://epermit.dagangnet.com.my/" target="_blank">https://epermit.dagangnet.com.my/</a></td><td>Online AP application if MITI Battery AP applies.</td><td>Online portal; subject to maintenance.</td></tr><tr><td>DagangNet Careline</td><td>Tel: 1-300-133-133<br/>Email: careline@dagangnet.com<br/>WhatsApp: 010-447 5838</td><td>System support and ePermit access.</td><td>DagangNet support page states services are available 24/7; check maintenance notices.</td></tr><tr><td>JKDM HS Explorer / Customs</td><td><a href="https://ezhs.customs.gov.my/" target="_blank">JKDM HS Explorer</a><br/>Customs Call Center: 1-300-888-500<br/>Email: ccc@customs.gov.my</td><td>HS code check and customs classification. Battery HS code may differ from scooter HS code.</td><td>Customs Call Center / MySST page states Monday-Friday, 8:00 am-5:00 pm; closed weekends/public holidays.</td></tr></tbody></table><h2>2. First Pre-Check</h2><div class="flow-box"><ul><li>Confirm whether battery is imported inside complete scooter or separately.</li><li>Confirm battery HS code with forwarder/customs agent; do not reuse scooter HS code automatically.</li><li>Ask MITI whether the battery import falls under Battery AP.</li><li>Prepare UN38.3 + SDS/MSDS regardless for lithium battery shipping/logistics.</li></ul></div><h2>3. Applicability Scenarios</h2><table><thead><tr><th>Scenario</th><th>MITI Battery AP Check?</th><th>Notes</th></tr></thead><tbody><tr><td>Battery inside complete scooter, CBU import</td><td class="maybe">Check</td><td>Main route may be MITI Micromobility AP, but battery documents still needed.</td></tr><tr><td>Battery imported separately as spare/replacement</td><td class="yes">Yes</td><td>Likely needs separate battery AP/HS code check.</td></tr><tr><td>Free-of-charge warranty battery from overseas</td><td class="yes">Yes</td><td>Still physical goods entering Malaysia; may need AP/customs declaration.</td></tr><tr><td>Export defective battery then supplier sends replacement</td><td class="yes">Likely uses new AP/quota</td><td>Export does not automatically restore old import quota unless MITI/Customs confirms.</td></tr><tr><td>Same battery model repeat shipment</td><td class="maybe">Check permit validity/quantity</td><td>May need new ePermit/AP depending on shipment and quota.</td></tr><tr><td>Different voltage/capacity/cell/BMS/manufacturer</td><td class="yes">Re-check</td><td>May need new report/AP/technical evaluation.</td></tr></tbody></table><h2>4. Document Package</h2><div class="code-block">- HS code / Customs classification for battery
-- Application letter on company letterhead
-- Company profile / SSM
-- Importer details
-- Supplier/manufacturer details
-- Product catalogue
-- Battery specification sheet
-- Battery model number
-- Battery voltage/capacity/Wh rating
-- Invoice and packing list
-- Country of origin
-- UN38.3 test summary
-- UN38.3 full test report, if available
-- SDS/MSDS
-- IEC 62133 / MS IEC 62133 report, if required/available
-- Technical Evaluation Report, if required by MITI
-- DagangNet/ePermit account</div><h2>5. Quick Flow</h2><div class="code-block">1. Confirm whether battery is imported separately or inside complete scooter.
-2. Confirm HS code with forwarder/customs agent.
-3. Ask MITI whether Battery AP applies.
-4. Request supplier battery documents: UN38.3, SDS/MSDS, IEC report if available, battery spec, label and photos.
-5. Prepare Technical Evaluation Report only if required.
-6. Submit AP through ePermit if MITI confirms Battery AP is required.
-7. Use approved AP for customs clearance.</div><div class="warning"><strong>Important:</strong> Replacement battery from overseas should be treated as a new import unless MITI/Customs gives written confirmation otherwise.</div><p class="small">Prepared as an internal guide. Final applicability depends on HS code, import method and MITI/Customs confirmation.</p></div></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>MITI Battery AP Flow</title><style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:24px;background:#f7f7f7;color:#222}.container{max-width:1180px;margin:auto;background:#fff;padding:28px;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.08)}h1{margin-top:0;color:#1f3a5f}h2{margin-top:28px;color:#1f3a5f;border-bottom:2px solid #d9e3f0;padding-bottom:6px;font-size:21px}.summary{background:#eef6ff;border-left:5px solid #4d8fd6;padding:12px 16px;margin:18px 0;border-radius:6px}.note{background:#fff8e6;border-left:5px solid #f0b429;padding:12px 16px;margin:18px 0;border-radius:6px}.warning{background:#fff0f0;border-left:5px solid #c0392b;padding:12px 16px;margin:18px 0;border-radius:6px}table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px}th,td{border:1px solid #ddd;padding:10px;vertical-align:top}th{background:#eaf0f7;color:#1f3a5f;text-align:left}tr:nth-child(even){background:#fafafa}a{color:#1c5f9e;text-decoration:none;word-break:break-word}.yes{color:#b00020;font-weight:bold}.no{color:#2e8b57;font-weight:bold}.maybe{color:#8a5a00;font-weight:bold}.mandatory{color:#b00020;font-weight:bold}.flow-box{border:1px solid #d7dce2;border-radius:10px;padding:16px;margin:14px 0;background:#fcfcfc}.code-block{background:#f2f4f7;border:1px solid #d7dce2;border-radius:8px;padding:12px;white-space:pre-wrap;font-family:Consolas,monospace;font-size:13px}.small{font-size:13px;color:#555}.updated{display:inline-block;font-size:12px;color:#5a6b7b;background:#eef2f6;border:1px solid #d7dce2;border-radius:20px;padding:3px 12px;margin:6px 0 4px}</style></head><body><div class="container"><h1>MITI Battery AP Flow</h1><span class="updated">Last updated: 2026-05-27 — refreshed to the 1 Jan 2026 battery importation SOP + Customs Ruling (Classification Letter) process</span>
+
+<div class="summary"><strong>Purpose:</strong> This guide covers the MITI Approved Permit (AP) for new reusable batteries / accumulators related to electric scooters or motor vehicles, under the battery importation SOP effective 1 January 2026.</div>
+
+<div class="note"><strong>Core rule (effective 1 Jan 2026):</strong> The previous manual <em>No Objection Letter</em> route is replaced by an <strong>AP applied through the ePermit system</strong>. The AP applies to <strong>new reusable batteries (accumulators) for motor vehicles</strong> classified under HS headings <strong>87.01, 87.02, 87.03, 87.04, 87.05, 87.09 and 87.11</strong> — electric scooters typically fall under 87.03 or 87.11, so scooter batteries imported under these headings are in scope. The AP package now requires a <strong>Classification Letter from Customs</strong> (a Customs Ruling — see Section 6) plus a <strong>Technical Evaluation Report</strong>. If the battery is inside a complete scooter (CBU), the main route may be the MITI Micromobility AP, but the same battery documents are still needed.</div>
+
+<h2>1. Official Websites and Contacts</h2>
+<table><thead><tr><th>Reference</th><th>Website / Contact</th><th>Use For</th><th>Hours / Notes</th></tr></thead><tbody>
+<tr><td>MITI Battery Importation SOP</td><td><a href="https://www.miti.gov.my/index.php/pages/view/10897" target="_blank">MITI Battery SOP page</a></td><td>Battery importation SOP and AP requirement effective 1 January 2026.</td><td>Online reference; subject to updates.</td></tr>
+<tr><td>MITI Battery AP Team (BESI)</td><td>Email: <strong>apbesi@miti.gov.my</strong><br/>General AP: ap@miti.gov.my<br/>Tel: 03-6208 4970 / 03-6208 4945</td><td>Battery AP applicability, document set, model/quota clarification. Use apbesi@ for battery-specific queries.</td><td>MITI states AP meetings/discussions are by appointment. Contact MITI first.</td></tr>
+<tr><td>MITI AP Main Page</td><td><a href="https://www.miti.gov.my/ap" target="_blank">https://www.miti.gov.my/ap</a></td><td>General AP information and ePermit reference.</td><td>Online portal; subject to maintenance.</td></tr>
+<tr><td>ePermit (Company AP Registration)</td><td><a href="https://newepermit.dagangnet.com.my/" target="_blank">https://newepermit.dagangnet.com.my/</a></td><td>Register the company and submit the Battery AP online (the system that replaced the manual route).</td><td>Online portal; subject to maintenance.</td></tr>
+<tr><td>DagangNet Careline</td><td>Tel: 1-300-133-133<br/>Email: careline@dagangnet.com<br/>WhatsApp: 010-447 5838</td><td>ePermit system support and account access.</td><td>DagangNet support page states services are available 24/7; check maintenance notices.</td></tr>
+<tr><td>RMCD Technical Services Division<br/>(Classification, Tariff &amp; Drafting Branch)</td><td><a href="https://mysst.customs.gov.my/" target="_blank">MySST portal</a> · <a href="https://www.customs.gov.my/en/procedure/technical-services/customs-ruling" target="_blank">Customs Ruling page</a><br/>Customs Call Center: 1-300-888-500<br/>Email: ccc@customs.gov.my</td><td>Apply for the <strong>Customs Ruling / Classification Letter</strong> the AP requires (see Section 6). Also HS code checks.</td><td>Customs Call Center / MySST page states Monday–Friday, 8:00 am–5:00 pm; closed weekends/public holidays.</td></tr>
+<tr><td>JKDM HS Explorer</td><td><a href="https://ezhs.customs.gov.my/" target="_blank">JKDM HS Explorer</a></td><td>Preliminary HS code lookup. Battery HS code may differ from the scooter HS code.</td><td>Online reference; the binding answer comes from a Customs Ruling, not the explorer.</td></tr>
+</tbody></table>
+
+<h2>2. First Pre-Check</h2>
+<div class="flow-box"><ul>
+<li>Confirm whether the battery is imported inside a complete scooter (CBU) or separately.</li>
+<li>Confirm the battery's HS heading with your forwarder/customs agent; do not reuse the scooter HS code automatically. If in doubt, lock it in with a Customs Ruling (Section 6).</li>
+<li>Register the company on ePermit (<a href="https://newepermit.dagangnet.com.my/" target="_blank">newepermit.dagangnet.com.my</a>) early — account setup takes time.</li>
+<li>Start the Customs Classification Letter (Customs Ruling) early — it is a required AP document and is issued by RMCD, not MITI.</li>
+<li>Collect the Technical Evaluation Report inputs from the supplier: UN 38.3, UN R100/R136 (as applicable) and the relevant IEC test report. Keep SDS/MSDS for shipping/logistics regardless.</li>
+</ul></div>
+
+<h2>3. Applicability Scenarios</h2>
+<table><thead><tr><th>Scenario</th><th>MITI Battery AP?</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Battery imported separately as spare/replacement (HS 87.01–87.11)</td><td class="yes">Yes — required</td><td>Falls squarely under the 1 Jan 2026 SOP. Apply via ePermit with the full document package.</td></tr>
+<tr><td>Battery inside complete scooter, CBU import</td><td class="maybe">Check</td><td>Main route may be the MITI Micromobility AP, but the battery documents (Classification Letter, TER) are still needed.</td></tr>
+<tr><td>Free-of-charge warranty / replacement battery from overseas</td><td class="yes">Yes</td><td>Still physical goods entering Malaysia under a battery/vehicle heading; treat as a new import requiring AP + customs declaration.</td></tr>
+<tr><td>Export defective battery, supplier sends replacement</td><td class="yes">Yes — new AP</td><td>Export does not automatically restore an old import quota. Apply afresh unless MITI/Customs confirms otherwise in writing.</td></tr>
+<tr><td>Same battery model, repeat shipment</td><td class="maybe">Check permit validity/quantity</td><td>May need a new ePermit submission depending on shipment quantity and the AP's validity.</td></tr>
+<tr><td>Different voltage/capacity/cell/BMS/manufacturer</td><td class="yes">Re-check</td><td>Treat as a new model — likely a new Technical Evaluation Report and AP, and possibly a new Customs Ruling.</td></tr>
+</tbody></table>
+
+<h2>4. Document Package</h2>
+<div class="flow-box"><strong>Five core documents required by the SOP:</strong>
+<div class="code-block">1. Classification Letter from Customs (Customs Ruling — see Section 6)
+2. Application Letter (on company letterhead)
+3. Product Catalogue
+4. Invoice
+5. Technical Evaluation Report (TER)</div>
+<strong>The Technical Evaluation Report (TER) must comprise:</strong>
+<div class="code-block">- UN 38.3 (lithium battery transport test summary/report)
+- UN R100 (four tyres) OR UN R136 (two tyres), as applicable
+- Relevant IEC test report (e.g. IEC 62133 / MS IEC 62133)</div>
+<strong>Supporting documents to keep on hand</strong> (commonly requested / needed for clearance &amp; logistics):
+<div class="code-block">- Company profile / SSM, importer details
+- Supplier / manufacturer details
+- Battery specification sheet, model number, voltage / capacity / Wh rating
+- Packing list, country of origin
+- SDS / MSDS (dangerous-goods handling)
+- ePermit / company AP registration</div></div>
+<div class="note"><strong>Note:</strong> A complete application is <strong>processed within five (5) working days</strong> (excluding the submission date). Incomplete documents reset the clock — get the Classification Letter and full TER ready before submitting.</div>
+
+<h2>5. Quick Flow</h2>
+<div class="code-block">1. Confirm whether the battery is imported separately or inside a complete scooter, and its HS heading (87.01–87.11).
+2. Apply for the Customs Classification Letter (Customs Ruling) from RMCD — see Section 6.
+3. Collect supplier documents and assemble the Technical Evaluation Report: UN 38.3 + UN R100/R136 (as applicable) + relevant IEC report.
+4. Register / log in to ePermit (newepermit.dagangnet.com.my).
+5. Submit the Battery AP with the 5 core documents (Classification Letter, Application Letter, Product Catalogue, Invoice, TER).
+6. MITI processes a complete application within 5 working days.
+7. Use the approved AP for customs clearance.</div>
+
+<h2>6. How to get the Customs Classification Letter (Customs Ruling)</h2>
+<div class="flow-box"><p><strong>What it is:</strong> A <strong>Customs Ruling</strong> is a written, binding tariff-classification decision issued by the RMCD <em>Technical Services Division, Classification, Tariff &amp; Drafting Branch</em>. It is the "Classification Letter from Customs" the MITI Battery AP requires (document #1 in Section 4), and it gives you certainty on the battery's HS heading before importing.</p>
+<p class="small"><strong>Validity:</strong> A Customs Ruling on Origin is valid for 3 years and is non-renewable (a new application is needed after). A classification ruling remains valid unless the law, the tariff (HS) code, or the product facts change — re-apply if any of these change.</p></div>
+<table><thead><tr><th>Step</th><th>What to do</th></tr></thead><tbody>
+<tr><td>1. Get the form</td><td>Download the <strong>Application form for Customs Ruling</strong> from the MySST portal: <a href="https://mysst.customs.gov.my/" target="_blank">mysst.customs.gov.my</a> → <em>Legislation &amp; Guide → SST Forms → Application form for Customs Ruling</em>.</td></tr>
+<tr><td>2. Fill it in</td><td>Complete all required information about the importer and the battery.</td></tr>
+<tr><td>3. Attach documents</td><td>Catalogue, product information, work-flow / process and service contract (as applicable), plus a <strong>letter of authorization</strong> if an agent applies on your behalf.</td></tr>
+<tr><td>4. Pay the fee</td><td>Processing fee <strong>RM200.00</strong> per application. <strong>By post:</strong> attach a bank draft of RM200.00 payable to <strong>KETUA PENGARAH KASTAM MALAYSIA</strong>. <strong>By hand:</strong> RMCD issues a letter to pay RM200.00 by cash or bank draft at the cashier's counter. Submit before <strong>3.30 pm</strong>.</td></tr>
+<tr><td>5. Submit</td><td><strong>By post or by hand</strong> to RMCD HQ Putrajaya: Technical Services Division, Classification, Tariff &amp; Drafting Branch, Level 6 North, Finance Ministry Complex, No. 3 Persiaran Perdana, Precinct 2, 62596 Putrajaya. <strong>Or by hand</strong> to any of the 16 Technical Services Division offices (below).</td></tr>
+<tr><td>6. Keep the receipt</td><td>You receive an official receipt and an <strong>acknowledgement slip</strong> — use its reference number and contact person to check the application status.</td></tr>
+</tbody></table>
+<div class="flow-box"><strong>Technical Services Division offices (by hand):</strong>
+<div class="code-block">Kangar (Perlis) · Alor Setar (Kedah) · Seberang Jaya (Penang) · Ipoh (Perak)
+Pelabuhan Klang (Selangor) · Kelana Jaya (WP Kuala Lumpur) · Seremban (N. Sembilan)
+Ayer Keroh (Melaka) · Johor Bahru (Johor) · Kuantan (Pahang) · Kuala Terengganu (Terengganu)
+Kota Bharu (Kelantan) · Kuching (Sarawak) · Kota Kinabalu (Sabah) · Labuan · KLIA</div></div>
+<p class="small">Source: RMCD "Guide Customs Ruling" (02DIS2019) and "Application Procedure of Customs Ruling", via <a href="https://mysst.customs.gov.my/" target="_blank">mysst.customs.gov.my</a>.</p>
+
+<div class="warning"><strong>Important:</strong> A replacement battery from overseas should be treated as a new import unless MITI/Customs gives written confirmation otherwise. Confirm the exact HS heading and AP applicability with MITI (apbesi@miti.gov.my) and RMCD for your specific product and shipment.</div>
+<p class="small">Prepared as a compliance reference. Final applicability depends on the HS code, import method and written confirmation from MITI / Customs.</p>
+</div></body></html>
